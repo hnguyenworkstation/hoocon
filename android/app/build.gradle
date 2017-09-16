@@ -64,27 +64,38 @@ dependencies {
     compile project(':text-link-builder')
     compile project(':image_cropper')
     compile project(':gravitysnaphelper')
+    compile project(':easyfonts')
+    compile project(':jobqueue')
 
     compile 'com.android.support:multidex:1.0.2'
     compile 'com.android.support:cardview-v7:' + versions.supportLib
     compile 'com.android.support:design:' + versions.supportLib
     compile 'com.android.support:support-v4:' + versions.supportLib
     compile 'com.android.support:appcompat-v7:' + versions.supportLib
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
     compile 'com.google.android.gms:play-services-gcm:' + versions.googleSupportLib
     compile 'com.google.android.gms:play-services-maps:' + versions.googleSupportLib
     compile 'com.google.android.gms:play-services-places:' + versions.googleSupportLib
     compile 'com.google.android.gms:play-services-nearby:' + versions.googleSupportLib
     compile 'com.google.android.gms:play-services-identity:' + versions.googleSupportLib
     compile 'com.google.android.gms:play-services-location:' + versions.googleSupportLib
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    compile 'com.google.firebase:firebase-core:' + versions.googleSupportLib
+    compile 'com.google.firebase:firebase-crash:' + versions.googleSupportLib
+    compile 'com.google.firebase:firebase-auth:' + versions.googleSupportLib
+    compile 'com.google.firebase:firebase-messaging:' + versions.googleSupportLib
 
     compile 'com.facebook.android:facebook-android-sdk:4.26.0'
     compile 'com.facebook.android:account-kit-sdk:4.26.0'
-
     compile 'com.github.bumptech.glide:glide:4.1.1'
-    compile 'com.android.support:support-v4:' + versions.supportLib
+    compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
+
     annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.jakewharton.butterknife'

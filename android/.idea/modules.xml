@@ -6,8 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dialogs-commons/dialogs-commons.iml" filepath="$PROJECT_DIR$/dialogs-commons/dialogs-commons.iml" />
       <module fileurl="file://$PROJECT_DIR$/dialogs-core/dialogs-core.iml" filepath="$PROJECT_DIR$/dialogs-core/dialogs-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/easyfonts/easyfonts.iml" filepath="$PROJECT_DIR$/easyfonts/easyfonts.iml" />
       <module fileurl="file://$PROJECT_DIR$/gravitysnaphelper/gravitysnaphelper.iml" filepath="$PROJECT_DIR$/gravitysnaphelper/gravitysnaphelper.iml" />
       <module fileurl="file://$PROJECT_DIR$/image_cropper/image_cropper.iml" filepath="$PROJECT_DIR$/image_cropper/image_cropper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobqueue/jobqueue.iml" filepath="$PROJECT_DIR$/jobqueue/jobqueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/photopicker/photopicker.iml" filepath="$PROJECT_DIR$/photopicker/photopicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/photoview/photoview.iml" filepath="$PROJECT_DIR$/photoview/photoview.iml" />
       <module fileurl="file://$PROJECT_DIR$/text-link-builder/text-link-builder.iml" filepath="$PROJECT_DIR$/text-link-builder/text-link-builder.iml" />
