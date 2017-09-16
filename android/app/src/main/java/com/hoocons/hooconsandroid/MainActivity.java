@@ -1,9 +1,8 @@
 package com.hoocons.hooconsandroid;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.hoocons.hooconsandroid.Controller.BaseActivity;
+import com.hoocons.hooconsandroid.AppController.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 

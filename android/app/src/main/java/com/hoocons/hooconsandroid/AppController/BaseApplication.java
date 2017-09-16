@@ -1,6 +1,5 @@
-package com.hoocons.hooconsandroid.Controller;
+package com.hoocons.hooconsandroid.AppController;
 
-import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
@@ -12,7 +11,6 @@ import com.bumptech.glide.RequestManager;
 /**
  * Created by hungnguyen on 9/16/17.
  */
-
 public class BaseApplication extends Application {
     public static final String TAG = BaseApplication.class
             .getSimpleName();
@@ -25,6 +23,9 @@ public class BaseApplication extends Application {
         super.onCreate();
         mInstance = BaseApplication.this;
         context = getApplicationContext();
+
+        /* Init Preferences */
+        BasePreferenceManager.init(this);
 
         /* Init Glide */
         mGlideRequestManager = Glide.with(this);
