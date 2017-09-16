@@ -15,6 +15,7 @@
     <string name="toast_pick_loc">please pick a location</string>
     <string name="action_register">Register an account</string>
     <string name="continue_with_phone_number">Continue with phone number</string>
+    <string name="login_by_facebook">Login By Facebook</string>
     <string name="continue_text">Continue</string>
     <string name="welcome">Welcome to Hoocons travellers community</string>
     <string name="welcome_desc">A better way to have travel experiences from over the world</string>

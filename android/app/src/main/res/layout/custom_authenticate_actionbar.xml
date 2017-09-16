@@ -16,12 +16,10 @@
     <ImageButton
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:background="@drawable/icon_button"
         android:id="@+id/question"
         android:layout_width="@dimen/actionbar_icon_size"
         android:layout_height="@dimen/actionbar_icon_size"
         android:src="@drawable/ic_circle_question_mark"
-        android:layout_marginEnd="@dimen/actionbar_margin"
-        android:layout_marginRight="@dimen/actionbar_margin" />
+        android:layout_marginEnd="@dimen/actionbar_margin"/>
 </RelativeLayout>

@@ -10,14 +10,14 @@ import android.view.ViewGroup;
 import com.hoocons.hooconsandroid.R;
 
 
-public class LoginFragment extends Fragment {
+public class PhoneLoginFragment extends Fragment {
 
-    public LoginFragment() {
+    public PhoneLoginFragment() {
         // Required empty public constructor
     }
 
-    public static LoginFragment newInstance() {
-        LoginFragment fragment = new LoginFragment();
+    public static PhoneLoginFragment newInstance() {
+        PhoneLoginFragment fragment = new PhoneLoginFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

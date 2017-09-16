@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/darken_white"
     tools:context="com.hoocons.hooconsandroid.ViewFragments.SocialLoginFragment">
 
     <RelativeLayout
@@ -72,7 +71,6 @@
 
             <ImageView
                 android:layout_marginStart="@dimen/margin_12"
-                android:layout_marginLeft="@dimen/margin_12"
                 android:layout_width="@dimen/button_logo_size"
                 android:layout_height="@dimen/button_logo_size"
                 android:src="@drawable/ic_keypad_white"
@@ -121,7 +119,7 @@
                 android:layout_margin="@dimen/margin_12"
                 android:maxLines="2"
                 android:textAlignment="center"
-                android:text="@string/continue_with_phone_number"
+                android:text="@string/login_by_facebook"
                 android:textSize="@dimen/text_16"
                 android:textColor="@color/white"
                 android:textStyle="bold"
