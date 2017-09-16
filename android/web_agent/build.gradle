@@ -1,19 +1,20 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply from: '../dependencies.gradle'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.publishVersionCode
+        versionName versions.publishVersion
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -42,7 +43,7 @@ dependencies {
     })
 
     testCompile 'junit:junit:4.12'
-    compile "com.android.support:design:26.0.1"
-    compile "com.android.support:support-v4:26.0.1"
+    compile "com.android.support:design:" + versions.supportLib
+    compile "com.android.support:support-v4:" + versions.supportLib
     provided fileTree(include: ['*.jar'], dir: 'providedLibs')
 }

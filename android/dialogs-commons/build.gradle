@@ -1,12 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: '../dependencies.gradle'
 
-ext {
-    PUBLISH_GROUP_ID = 'com.hoocons.hoocons_android'
-    PUBLISH_ARTIFACT_ID = 'dialogs-commons'
-    PUBLISH_VERSION = versions.publishVersion
-}
-
 android {
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools

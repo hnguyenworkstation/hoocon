@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.StrictMode;
+import android.support.multidex.MultiDex;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
@@ -55,6 +56,12 @@ public class BaseApplication extends Application {
 
     public static synchronized BaseApplication context() {
         return (BaseApplication) context;
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     public synchronized RequestManager getGlide() {

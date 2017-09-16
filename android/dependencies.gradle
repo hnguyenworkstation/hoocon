@@ -9,6 +9,7 @@ ext.versions = [
         spotlessPlugin    : '3.4.0',
 
         supportLib        : '26.0.1',
+        googleSupportLib  : '11.2.0',
         mdProgressBar     : '1.4.1',
         butterKnife       : '8.6.0'
 ]

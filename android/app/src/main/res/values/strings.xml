@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">HooconsAndroid</string>
+    <string name="app_name">Hoocons</string>
     <string name="file_provider_authorities">com.hoocons.hooconsandroid.provider</string>
 
     <string name="facebook_app_id">1976876255916415</string>
+    <string name="facebook_account_kit">1a1bc440e5e29a836eea66e0cd5cfc2f</string>
     <string name="fb_login_protocol_scheme">fb1976876255916415</string>
 
     <!-- Setting Strings -->
@@ -14,8 +15,8 @@
     <string name="action_register">Register an account</string>
     <string name="continue_with_phone_number">Continue with phone number</string>
     <string name="continue_text">Continue</string>
-    <string name="welcome">Welcome to Hoocon community</string>
-    <string name="welcome_desc">A newer, stronger way to connect \n everyone over the world</string>
+    <string name="welcome">Welcome to Hoocons travellers community</string>
+    <string name="welcome_desc">A better way to have travel experiences from over the world</string>
     <string name="help_center">Help Center</string>
     <string name="rate_and_comment">Rate and Comment</string>
     <string name="report_a_problem">Report a Problem</string>

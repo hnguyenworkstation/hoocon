@@ -83,17 +83,17 @@
     <dimen name="postfeed_image_height">212dp</dimen>
     <dimen name="postfeed_max_image_height">512dp</dimen>
 
-    <!-- Event Card View -->
+    <dimen name="card_view_parent_radius">8dp</dimen>
     <dimen name="card_time_logo">10dp</dimen>
     <dimen name="cardview_smallicon_size">16dp</dimen>
     <dimen name="cardview_medicon_size">20dp</dimen>
 
     <!-- Intro Activity Dimen -->
-    <dimen name="intro_logo_size">148dp</dimen>
+    <dimen name="intro_logo_size">168dp</dimen>
     <dimen name="dots_height">30dp</dimen>
     <dimen name="dots_margin_bottom">20dp</dimen>
-    <dimen name="slide_title">24sp</dimen>
-    <dimen name="slide_desc">14sp</dimen>
+    <dimen name="slide_title">26sp</dimen>
+    <dimen name="slide_desc">16sp</dimen>
     <dimen name="button_logo_size">32dp</dimen>
     <dimen name="intro_logo_padding">50dp</dimen>
 
