@@ -1,6 +1,7 @@
 import java.util.regex.Pattern
 
 apply plugin: 'com.android.library'
+apply from: '../dependencies.gradle'
 
 Properties releaseConfig = new Properties()
 File releaseFile = new File("${projectDir}/releaseConfig.properties")
@@ -27,7 +28,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
@@ -58,14 +59,15 @@ dependencies {
     // time. If app depends on a newer one, gradle will pick it for us.
     //noinspection GradleDependency
     // remove when gms moves to individual libraries
-    compile 'com.android.support:support-v4:25.2.0'
+    compile 'com.android.support:support-v4:' + versions.supportLib
     // build tools does not allow making this provided so we make it optional when pom is created
-    compile 'com.google.android.gms:play-services-gcm:10.2.0'
+    compile 'com.google.android.gms:play-services-gcm:' + versions.googleSupportLib
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
     buildTypes {
         debug {
             testCoverageEnabled = true
@@ -75,9 +77,17 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        warning 'InvalidPackage'
+    }
+
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 25
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.publishVersionCode
+        versionName versions.publishVersion
     }
 
     testOptions {
@@ -88,10 +98,6 @@ android {
                 includeNoLocationClasses = true
             }
         }
-    }
-
-    lintOptions {
-        warning 'InvalidPackage'
     }
 }
 
