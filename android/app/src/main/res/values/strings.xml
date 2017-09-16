@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HooconsAndroid</string>
+    <string name="file_provider_authorities">com.hoocons.hooconsandroid.provider</string>
 </resources>
