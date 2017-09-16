@@ -10,6 +10,10 @@ ext.versions = [
 
         supportLib        : '26.0.1',
         googleSupportLib  : '11.2.2',
+        awsSupportLib     : '2.4.5',
+        facebookSupportLib: '4.26.0',
+        glideSupportLib   : '4.1.1',
+
         mdProgressBar     : '1.4.1',
         butterKnife       : '8.6.0'
 ]

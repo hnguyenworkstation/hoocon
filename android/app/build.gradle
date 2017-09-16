@@ -86,14 +86,26 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:' + versions.googleSupportLib
     compile 'com.google.firebase:firebase-messaging:' + versions.googleSupportLib
 
-    compile 'com.facebook.android:facebook-android-sdk:4.26.0'
-    compile 'com.facebook.android:account-kit-sdk:4.26.0'
-    compile 'com.github.bumptech.glide:glide:4.1.1'
-    compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'com.amazonaws:aws-android-sdk-core:' + versions.awsSupportLib
+    compile 'com.amazonaws:aws-android-sdk-s3:' + versions.awsSupportLib
+    compile 'com.amazonaws:aws-android-sdk-ddb:' + versions.awsSupportLib
+
+    compile 'com.facebook.android:facebook-android-sdk:' + versions.facebookSupportLib
+    compile 'com.facebook.android:account-kit-sdk:' + versions.facebookSupportLib
+
     compile 'org.greenrobot:eventbus:3.0.0'
 
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    compile 'com.github.bumptech.glide:glide:' + versions.glideSupportLib
+    compile "com.github.bumptech.glide:okhttp3-integration:" + versions.glideSupportLib
+    compile ("com.github.bumptech.glide:recyclerview-integration:" + versions.glideSupportLib) {
+        transitive = false
+    }
+    compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'org.parceler:parceler-api:1.1.9'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:' + versions.glideSupportLib
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    annotationProcessor 'org.parceler:parceler:1.1.9'
 
     testCompile 'junit:junit:4.12'
 }
