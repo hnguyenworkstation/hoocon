@@ -15,7 +15,16 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -35,7 +44,11 @@ dependencies {
     compile project(':text-link-builder')
     compile project(':image_cropper')
     compile project(':gravitysnaphelper')
+
     compile 'com.android.support:appcompat-v7:26.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.bumptech.glide:glide:4.1.1'
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
     testCompile 'junit:junit:4.12'
 }
