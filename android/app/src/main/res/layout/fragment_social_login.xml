@@ -75,7 +75,7 @@
                 android:layout_marginLeft="@dimen/margin_12"
                 android:layout_width="@dimen/button_logo_size"
                 android:layout_height="@dimen/button_logo_size"
-                android:src="@drawable/ic_circle_question_mark"
+                android:src="@drawable/ic_keypad_white"
                 android:layout_gravity="center" />
 
             <TextView
@@ -83,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_margin="@dimen/margin_16"
+                android:layout_margin="@dimen/margin_12"
                 android:maxLines="2"
                 android:textAlignment="center"
                 android:text="@string/continue_with_phone_number"
@@ -110,7 +110,7 @@
                 android:layout_marginLeft="@dimen/margin_12"
                 android:layout_width="@dimen/button_logo_size"
                 android:layout_height="@dimen/button_logo_size"
-                android:src="@drawable/ic_circle_question_mark"
+                android:src="@drawable/ic_facebook_logo"
                 android:layout_gravity="center" />
 
             <TextView
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_margin="@dimen/margin_16"
+                android:layout_margin="@dimen/margin_12"
                 android:maxLines="2"
                 android:textAlignment="center"
                 android:text="@string/continue_with_phone_number"
@@ -133,7 +133,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"/>
-
         </LinearLayout>
 
         <Button
@@ -146,7 +145,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:text="@string/action_register"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_12"/>
     </RelativeLayout>
 

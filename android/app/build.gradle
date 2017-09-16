@@ -65,10 +65,9 @@ dependencies {
     compile project(':image_cropper')
     compile project(':gravitysnaphelper')
     compile project(':easyfonts')
+    compile project(':permission_manager')
     compile project(':jobqueue')
-
-    compile 'com.android.support:multidex:1.0.2'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile project(':country-code-picker')
 
     compile 'com.android.support:cardview-v7:' + versions.supportLib
     compile 'com.android.support:design:' + versions.supportLib
@@ -94,25 +93,27 @@ dependencies {
     compile 'com.facebook.android:facebook-android-sdk:' + versions.facebookSupportLib
     compile 'com.facebook.android:account-kit-sdk:' + versions.facebookSupportLib
 
+
+    compile 'com.github.bumptech.glide:glide:' + versions.glideSupportLib
+    compile "com.github.bumptech.glide:okhttp3-integration:" + versions.glideSupportLib
+    compile("com.github.bumptech.glide:recyclerview-integration:" + versions.glideSupportLib) {
+        transitive = false
+    }
+
+    annotationProcessor 'com.github.bumptech.glide:compiler:' + versions.glideSupportLib
+
+    compile 'com.android.support:multidex:1.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-
-    compile 'com.github.bumptech.glide:glide:' + versions.glideSupportLib
-    compile "com.github.bumptech.glide:okhttp3-integration:" + versions.glideSupportLib
-    compile ("com.github.bumptech.glide:recyclerview-integration:" + versions.glideSupportLib) {
-        transitive = false
-    }
     compile 'com.jakewharton:butterknife:8.8.1'
     compile 'org.parceler:parceler-api:1.1.9'
-
-    annotationProcessor 'com.github.bumptech.glide:compiler:' + versions.glideSupportLib
+    testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     annotationProcessor 'org.parceler:parceler:1.1.9'
-
-    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.jakewharton.butterknife'

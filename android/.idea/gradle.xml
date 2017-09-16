@@ -9,12 +9,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/country-code-picker" />
             <option value="$PROJECT_DIR$/dialogs-commons" />
             <option value="$PROJECT_DIR$/dialogs-core" />
             <option value="$PROJECT_DIR$/easyfonts" />
             <option value="$PROJECT_DIR$/gravitysnaphelper" />
             <option value="$PROJECT_DIR$/image_cropper" />
             <option value="$PROJECT_DIR$/jobqueue" />
+            <option value="$PROJECT_DIR$/permission_manager" />
             <option value="$PROJECT_DIR$/photopicker" />
             <option value="$PROJECT_DIR$/photoview" />
             <option value="$PROJECT_DIR$/text-link-builder" />

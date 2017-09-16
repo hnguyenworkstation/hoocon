@@ -9,10 +9,11 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
 
 import java.lang.reflect.Field;
+
+
 /**
  * Created by hungnguyen on 9/16/17.
  */
-
 public class CustomViewPager extends ViewPager {
     public CustomViewPager(Context context) {
         super(context);
