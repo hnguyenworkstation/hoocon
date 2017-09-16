@@ -7,6 +7,9 @@ import android.os.StrictMode;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 
 /**
  * Created by hungnguyen on 9/16/17.
@@ -16,6 +19,8 @@ public class BaseApplication extends Application {
             .getSimpleName();
     private BaseApplication mInstance;
     public static Context context;
+
+
     private RequestManager mGlideRequestManager;
 
     @Override
@@ -23,6 +28,10 @@ public class BaseApplication extends Application {
         super.onCreate();
         mInstance = BaseApplication.this;
         context = getApplicationContext();
+
+        /* Init facebook */
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
 
         /* Init Preferences */
         BasePreferenceManager.init(this);

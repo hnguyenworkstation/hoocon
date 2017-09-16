@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="1"
+    android:exitFadeDuration="1">
+    <item android:state_pressed="false">
+        <shape android:shape="oval"
+            android:innerRadius="8dp">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="oval"
+            android:innerRadius="8dp">
+            <solid android:color="@color/gray_alpha" />
+        </shape>
+    </item>
+</selector>

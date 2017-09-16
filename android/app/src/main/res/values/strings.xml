@@ -1,4 +1,84 @@
 <resources>
     <string name="app_name">HooconsAndroid</string>
     <string name="file_provider_authorities">com.hoocons.hooconsandroid.provider</string>
+
+    <string name="facebook_app_id">1976876255916415</string>
+    <string name="fb_login_protocol_scheme">fb1976876255916415</string>
+
+    <!-- Setting Strings -->
+    <string name="action_reset_password">Forget password? Reset now</string>
+    <string name="action_allow_permission">Allow Permission</string>
+    <string name="pick_location">Pick Location</string>
+    <string name="pick_channel_location">Choose a location that your channel will be most seen</string>
+    <string name="toast_pick_loc">please pick a location</string>
+    <string name="action_register">Register an account</string>
+    <string name="continue_with_phone_number">Continue with phone number</string>
+    <string name="continue_text">Continue</string>
+    <string name="welcome">Welcome to Hoocon community</string>
+    <string name="welcome_desc">A newer, stronger way to connect \n everyone over the world</string>
+    <string name="help_center">Help Center</string>
+    <string name="rate_and_comment">Rate and Comment</string>
+    <string name="report_a_problem">Report a Problem</string>
+    <string name="privacy_and_term">Privacy and Terms</string>
+    <string name="contact_us">Contact us</string>
+    <string name="logout">Logout</string>
+    <string name="app_info">App Info</string>
+    <string name="fun_activities">Fun Activities</string>
+    <string name="add_more_contents">More contents</string>
+    <string name="add_tag">Add tags</string>
+
+    <!-- LOGIN SCREENS-->
+    <string name="verify_phone_number">Verify Phone Number</string>
+    <string name="confirmation_code">Confirmation Code</string>
+    <string name="confirm_code_explain">Enter the code that have been sent to your phone through SMS</string>
+    <string name="send_code">Send code</string>
+    <string name="verify">Verify</string>
+    <string name="resend">Send again</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="submit">Submit</string>
+    <string name="user_info">User Information</string>
+    <string name="user_display_name">Full name</string>
+    <string name="user_nickname">Nickname</string>
+    <string name="check">Check</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="error_phone_number">invalid phone number</string>
+    <string name="registering">Registering..</string>
+    <string name="error_empty_password">you must enter password</string>
+    <string name="error_pass_not_match">password does not match</string>
+    <string name="login_failed">Login failed! Please check username or password</string>
+    <string name="server_error">Server error! Please try again later</string>
+    <string name="warning">Warning</string>
+    <string name="account_banned_warn">This account has been banned</string>
+    <string name="fetch_user_info_error">Cannot fetch user data! Please check connection</string>
+    <string name="no_connection">No Connection</string>
+    <string name="new_user_question">New User?</string>
+    <string name="new_user_detect_and_req_register">This phone has not registered with us yet! Register now</string>
+    <string name="register">Register</string>
+    <string name="not_now">Not Now</string>
+    <string name="nickname_error">Invalid nickname</string>
+    <string name="not_enough_ages">too young! you are not allowed here</string>
+    <string name="checked">Checked</string>
+    <string name="requested">Requested</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="messages">Messages</string>
+    <string name="nickname_unavailable">This nickname is taken</string>
+    <string name="error_empty_nickname">Nickname must not be empty</string>
+    <string name="error_empty_name">Please enter your full name</string>
+    <string name="profile_required">Profile Required</string>
+    <string name="upload_failed_tryagain">Upload failed! Please try again</string>
+    <string name="error_empty_profile">Please provide a profile picture</string>
+    <string name="birthday">Birthday</string>
+    <string name="withdraw_friend_request">Withdraw friend request?</string>
+    <string name="withdraw_friend_request_content">Other user will no longer see your friend request!</string>
+    <string name="withdraw">Withdraw</string>
+    <string name="request_ready">request ready</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

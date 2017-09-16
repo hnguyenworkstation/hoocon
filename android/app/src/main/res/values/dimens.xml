@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="activity_card_corner">4dp</dimen>
+    <dimen name="find_match_card_margin_left_right">12dp</dimen>
+    <dimen name="find_match_card_margin_top">65dp</dimen>
+    <dimen name="sticker_image_size">64dp</dimen>
+    <dimen name="popo_image_size">64dp</dimen>
+    <dimen name="popo_image_padding">10dp</dimen>
+    <dimen name="event_card_radius">4dp</dimen>
+    <dimen name="event_card_elevator">2dp</dimen>
+    <dimen name="event_card_margin">4dp</dimen>
+
+    <!-- Text Dimen -->
+    <dimen name="text_10">10sp</dimen>
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+    <dimen name="text_22">22sp</dimen>
+    <dimen name="text_24">24sp</dimen>
+    <dimen name="text_26">26sp</dimen>
+
+    <!-- Actionbar Dimen -->
+    <dimen name="actionbar_margin">12dp</dimen>
+
+    <dimen name="chat_input">32dp</dimen>
+
+    <dimen name="sticker_height">100dp</dimen>
+    <dimen name="chat_avatar_width">18dp</dimen>
+    <dimen name="custom_toolbar_text_size">20sp</dimen>
+    <dimen name="custom_channel_toolbar_text_size">22sp</dimen>
+    <dimen name="custom_toolbar_small_text_size">14sp</dimen>
+    <dimen name="chat_title_text_size">16sp</dimen>
+
+    <dimen name="action_icon_size">28dp</dimen>
+    <dimen name="actionbar_icon_size">24dp</dimen>
+    <dimen name="bottom_logo_event_size">32dp</dimen>
+
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+
+    <!-- Chatroom row dimens -->
+
+    <!-- ChatRoom dimens -->
+    <dimen name="chatroom_message_txtsize">16sp</dimen>
+    <dimen name="message_image_size">88dp</dimen>
+    <dimen name="message_state_image_size">12dp</dimen>
+
+    <!-- Option Fragment dimens-->
+    <dimen name="option_text_size">14sp</dimen>
+    <dimen name="option_text_detail">18sp</dimen>
+    <dimen name="option_small_text_detail">14sp</dimen>
+    <dimen name="option_title_size">24sp</dimen>
+    <dimen name="event_type_text_size">16sp</dimen>
+
+    <!-- People Around dimens -->
+
+    <!-- Topic Item -->
+    <dimen name="place_logo_size">24dp</dimen>
+    <dimen name="topic_logo_size">38dp</dimen>
+    <dimen name="small_logo_size">24dp</dimen>
+
+    <!-- Event diments -->
+
+    <!-- My profile dimens -->
+
+    <!-- Post Feed Activity -->
+    <dimen name="postfeed_profile_size">58dp</dimen>
+    <dimen name="postfeed_image_height">212dp</dimen>
+    <dimen name="postfeed_max_image_height">512dp</dimen>
+
+    <!-- Event Card View -->
+    <dimen name="card_time_logo">10dp</dimen>
+    <dimen name="cardview_smallicon_size">16dp</dimen>
+    <dimen name="cardview_medicon_size">20dp</dimen>
+
+    <!-- Intro Activity Dimen -->
+    <dimen name="intro_logo_size">148dp</dimen>
+    <dimen name="dots_height">30dp</dimen>
+    <dimen name="dots_margin_bottom">20dp</dimen>
+    <dimen name="slide_title">24sp</dimen>
+    <dimen name="slide_desc">14sp</dimen>
+    <dimen name="button_logo_size">32dp</dimen>
+    <dimen name="intro_logo_padding">50dp</dimen>
+
+    <!-- Notification Fragment Dimen -->
+
+    <!-- Around fragment dimen-->
+    <dimen name="around_list_title_text">12sp</dimen>
+    <dimen name="title_button_height">30dp</dimen>
+
+    <dimen name="publish_photo_thumbnail_size">96dp</dimen>
+
+    <!-- Full event dimen -->
+
+    <!-- Comment dimen -->
+    <dimen name="comment_layout_margin">5dp</dimen>
+    <dimen name="comment_layout_start">5dp</dimen>
+    <dimen name="comment_name_text">15sp</dimen>
+    <dimen name="comment_time_text">12sp</dimen>
+    <dimen name="comment_icon_size">18dp</dimen>
+    <dimen name="comment_seemore_textsize">12sp</dimen>
+    <dimen name="comment_profile_size">38dp</dimen>
+
+    <!-- User Card Grid Layout -->
+
+    <!-- Channel Activity Dimen -->
+    <dimen name="channel_wallpaper_height">180dp</dimen>
+    <dimen name="big_button_height">56dp</dimen>
+
+    <!-- Moment CardView -->
+
+    <!-- Post Event Activity-->
+    <dimen name="post_event_image_holder">64dp</dimen>
+
+    <!-- Profile Activity-->
+    <dimen name="profile_header_height">124dp</dimen>
+    <dimen name="profile_avatar_height">90dp</dimen>
+
+    <!-- Full Comment Activity -->
+    <dimen name="toolbar_height">48dp</dimen>
+
+    <!-- Setting Activity -->
+    <dimen name="circle_button_size">32dp</dimen>
+    <dimen name="large_error_image_size">128dp</dimen>
+
+    <!-- Discuss Fragment-->
+
+    <!-- New Thread Activity -->
+    <dimen name="small_profile_actionbar">40dp</dimen>
+
+
+    <!-- Sliding Menu Dimens -->
+    <dimen name="channel_cardview_width">256dp</dimen>
+    <dimen name="channel_cardview_top_height">148dp</dimen>
+    <dimen name="channel_cardview_wallpaper_height">148dp</dimen>
+    <dimen name="channel_cardview_profile_size">60dp</dimen>
+    <dimen name="channel_cardview_info_height">48dp</dimen>
+
+    <!-- Override Bottombar dimens-->
+    <dimen name="design_bottom_navigation_height" tools:override="true">56dp</dimen>
+    <dimen name="profile_header_large_size">100dp</dimen>
+    <dimen name="profile_header_med_size">68dp</dimen>
+    <dimen name="emotion_size">18dip</dimen>
+    <dimen name="publish_emotion_size">24dip</dimen>
+    <dimen name="rippleStrokeWidth">2dp</dimen>
+    <dimen name="rippleRadius">64dp</dimen>
+    <dimen name="channel_action_button_size">32dp</dimen>
+
+    <!-- Featured Fragment dimens -->
+    <dimen name="profile_size_action_header">48dp</dimen>
+    <dimen name="flexible_space_image_height">240dp</dimen>
+    <dimen name="decorator_line_height">0.6dp</dimen>
+
+    <!-- Meetout card dimens -->
+    <dimen name="meetout_card_icon_size">16dp</dimen>
+    <dimen name="meetout_image_small_size">48dp</dimen>
+    <dimen name="meetout_image_height">200dp</dimen>
+    <dimen name="meetout_header_image">248dp</dimen>
+    <dimen name="item_emoticon_size_big">64dp</dimen>
+
+    <dimen name="hot_panel_height">198dp</dimen>
+    <dimen name="ad_title_text">14sp</dimen>
+    <dimen name="ad_message_text">12sp</dimen>
+
+
+</resources>

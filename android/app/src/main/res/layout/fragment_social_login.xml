@@ -1,0 +1,142 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hoocons.hooconsandroid.ViewFragments.SocialLoginFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/custom_toolbar"
+        android:layout_alignParentTop="true">
+        <include layout="@layout/custom_authenticate_actionbar"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/custom_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_marginTop="@dimen/margin_32"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/intro_logo_size"
+                android:layout_height="@dimen/intro_logo_size"
+                android:src="@drawable/hoocons_image_logo"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/slogin_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginBottom="@dimen/margin_12"
+                android:maxLines="2"
+                android:textAlignment="center"
+                android:text="@string/welcome"
+                android:textSize="@dimen/slide_title"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/slogin_desc"
+                android:gravity="center"
+                android:text="@string/welcome_desc"
+                android:textSize="@dimen/slide_desc"
+                android:textColor="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/active_button"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:id="@+id/phone_login_btn"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginStart="@dimen/margin_12"
+                    android:layout_marginLeft="@dimen/margin_12"
+                    android:layout_width="@dimen/button_logo_size"
+                    android:layout_height="@dimen/button_logo_size"
+                    android:src="@drawable/ic_circle_question_mark"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/phone_cont_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/margin_16"
+                    android:maxLines="2"
+                    android:textAlignment="center"
+                    android:text="@string/continue_with_phone_number"
+                    android:textSize="@dimen/text_16"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/facebook_login_button"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:id="@+id/facebook_login_btn"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_marginStart="@dimen/margin_12"
+                    android:layout_marginLeft="@dimen/margin_12"
+                    android:layout_width="@dimen/button_logo_size"
+                    android:layout_height="@dimen/button_logo_size"
+                    android:src="@drawable/ic_circle_question_mark"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/facebook_cont_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/margin_16"
+                    android:maxLines="2"
+                    android:textAlignment="center"
+                    android:text="@string/continue_with_phone_number"
+                    android:textSize="@dimen/text_16"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_marginBottom="@dimen/margin_24"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:id="@+id/register_btn"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_register"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_12"/>
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
