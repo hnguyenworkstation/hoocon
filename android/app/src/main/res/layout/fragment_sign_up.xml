@@ -44,10 +44,9 @@
                 android:ellipsize="end"
                 android:id="@+id/username"
                 android:textAlignment="center"
-                android:textSize="@dimen/small_title_size"
+                android:textSize="@dimen/medium_title_size"
                 android:textColor="@color/text_light_color"
-                android:textStyle="bold"
-                android:text="@string/signup"/>
+                android:textStyle="bold"/>
 
 
             <android.support.design.widget.TextInputLayout
@@ -62,9 +61,8 @@
                     android:textColor="@color/colorAccent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password"
                     android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/common_signin_button_text"
+                    android:hint="@string/common_signin_button_text"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
@@ -74,6 +72,7 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12"
                 android:theme="@style/AuthInputTextLabel"
                 >
 
@@ -81,11 +80,9 @@
                     android:id="@+id/re_password"
                     android:textSize="@dimen/text_20"
                     android:textColor="@color/colorAccent"
+                    android:hint="@string/confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_password"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/common_signin_button_text"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"

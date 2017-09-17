@@ -256,7 +256,6 @@ public class SocialLoginFragment extends Fragment {
             } else if (loginResult.wasCancelled()) {
                 toastMessage = "Login Cancelled";
             } else {
-                checkAccountKit();
                 if (loginResult.getAccessToken() != null) {
                     toastMessage = "Success:" + loginResult.getAccessToken().getAccountId();
                     loginResult.getFinalAuthorizationState();
@@ -264,6 +263,8 @@ public class SocialLoginFragment extends Fragment {
                     toastMessage = String.format(
                             "Success:%s...", loginResult.getAuthorizationCode().substring(0, 10));
                 }
+
+                checkAccountKit();
             }
 
             Toast.makeText(getContext(), toastMessage, Toast.LENGTH_SHORT).show();

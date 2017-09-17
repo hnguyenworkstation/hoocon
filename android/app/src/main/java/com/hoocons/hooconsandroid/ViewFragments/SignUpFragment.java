@@ -12,10 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hoocons.hooconsandroid.EventBus.PasswordCollected;
 import com.hoocons.hooconsandroid.R;
 import com.klinker.android.link_builder.Link;
 import com.klinker.android.link_builder.LinkBuilder;
 import com.vstechlab.easyfonts.EasyFonts;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -73,6 +76,39 @@ public class SignUpFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         initDefaultTextAndTypeFace();
+        initClickListener();
+    }
+
+    private void initClickListener() {
+        mSignUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isValidPassword()) {
+                    EventBus.getDefault().post(new PasswordCollected(mPassword.getText().toString()));
+                }
+            }
+        });
+    }
+
+    private boolean isValidPassword() {
+        if (mPassword.getText().length() == 0) {
+            mPassword.setError(getResources().getString(R.string.empty_field));
+            return false;
+        } else if (mRePassword.getText().length() == 0) {
+            mRePassword.setError(getResources().getString(R.string.empty_field));
+            return false;
+        } else if (mPassword.getText().length() <= 5) {
+            mPassword.setError(getResources().getString(R.string.pass_too_short));
+            return false;
+        } else if (mRePassword.getText().length() <= 5) {
+            mRePassword.setError(getResources().getString(R.string.pass_too_short));
+            return false;
+        } else if (!mRePassword.getText().toString().equals(mPassword.getText().toString())) {
+            mRePassword.setError(getResources().getString(R.string.error_pass_not_match));
+            return false;
+        }
+
+        return true;
     }
 
     private void initDefaultTextAndTypeFace() {
@@ -87,7 +123,7 @@ public class SignUpFragment extends Fragment {
         mTitle.setTypeface(EasyFonts.robotoBold(getContext()));
         mPassword.setTypeface(EasyFonts.robotoRegular(getContext()));
         mRePassword.setTypeface(EasyFonts.robotoRegular(getContext()));
-        mUserName.setTypeface(EasyFonts.robotoRegular(getContext()));
+        mUserName.setTypeface(EasyFonts.robotoBold(getContext()));
         mSignUpBtn.setTypeface(EasyFonts.robotoRegular(getContext()));
         mCondition.setTypeface(EasyFonts.robotoRegular(getContext()));
     }

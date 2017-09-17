@@ -35,6 +35,8 @@
     <string name="clicked_signup_condition">By clicked "Sign Up" you agree with our Terms and Conditions</string>
     <string name="term_and_condition">Terms and Conditions</string>
     <string name="update_info">Update Info</string>
+    <string name="empty_field">This field is required</string>
+    <string name="pass_too_short">Password must have at least 6 characters</string>
 
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>

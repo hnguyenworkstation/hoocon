@@ -1,11 +1,13 @@
 package com.hoocons.hooconsandroid.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.hoocons.hooconsandroid.AppController.BaseActivity;
 import com.hoocons.hooconsandroid.EventBus.ActionBackClicked;
+import com.hoocons.hooconsandroid.EventBus.PasswordCollected;
 import com.hoocons.hooconsandroid.R;
 import com.hoocons.hooconsandroid.ViewFragments.PhoneLoginFragment;
 import com.hoocons.hooconsandroid.ViewFragments.SocialLoginFragment;
@@ -87,5 +89,10 @@ public class AuthenticateActivity extends BaseActivity {
     @Subscribe
     public void onEvent(ActionBackClicked actionBackClicked) {
         drawBackStack();
+    }
+
+    @Subscribe
+    public void onEvent(PasswordCollected passwordCollected) {
+        startActivity(new Intent(this, CollectNewUserInfoActivity.class));
     }
 }

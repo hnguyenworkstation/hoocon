@@ -34,7 +34,7 @@ public class CollectNewUserInfoActivity extends BaseActivity {
             newInfoFragment = NewInfoFragment.newInstance();
         }
 
-        mFragTransition.replace(R.id.auth_layout_container, newInfoFragment, "new_user_info");
+        mFragTransition.replace(R.id.info_container, newInfoFragment, "new_user_info");
         mFragTransition.commit();
     }
 }
