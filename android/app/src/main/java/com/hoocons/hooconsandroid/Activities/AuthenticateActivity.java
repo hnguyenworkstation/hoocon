@@ -45,7 +45,7 @@ public class AuthenticateActivity extends BaseActivity {
     private void drawBackStack() {
         if (mFragManager.findFragmentByTag("social_login") != null) {
             onBackPressed();
-        } else if (mFragManager.findFragmentByTag("phone_login") != null) {
+        } else if (mFragManager.findFragmentByTag("phone_login") != null || mFragManager.findFragmentByTag("sign_up") != null) {
             mFragTransition = mFragManager.beginTransaction();
             mFragTransition.replace(R.id.auth_layout_container, socialLoginFragment, "social_login");
             mFragTransition.commit();
