@@ -81,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/text_20"
                         android:hint="@string/phone_number"
-                        android:inputType="textPhonetic"
+                        android:inputType="phone"
                         android:maxLines="1" />
 
                 </android.support.design.widget.TextInputLayout>

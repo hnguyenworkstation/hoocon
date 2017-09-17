@@ -33,3 +33,11 @@
 
 # for DexGuard only
 -keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+
+-keep class com.facebook.FacebookSdk {
+   boolean isInitialized();
+}
+-keep class com.facebook.appevents.AppEventsLogger {
+   com.facebook.appevents.AppEventsLogger newLogger(android.content.Context);
+   void logSdkEvent(java.lang.String, java.lang.Double, android.os.Bundle);
+}

@@ -34,6 +34,7 @@
     <string name="country">Country</string>
     <string name="clicked_signup_condition">By clicked "Sign Up" you agree with our Terms and Conditions</string>
     <string name="term_and_condition">Terms and Conditions</string>
+    <string name="update_info">Update Info</string>
 
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>

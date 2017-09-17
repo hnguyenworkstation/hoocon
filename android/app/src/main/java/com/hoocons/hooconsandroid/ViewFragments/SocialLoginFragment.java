@@ -34,10 +34,15 @@ import com.facebook.accountkit.AccountKitLoginResult;
 import com.facebook.accountkit.PhoneNumber;
 import com.facebook.accountkit.ui.AccountKitActivity;
 import com.facebook.accountkit.ui.AccountKitConfiguration;
+import com.facebook.accountkit.ui.CountryCodeSpinner;
 import com.facebook.accountkit.ui.LoginType;
+import com.facebook.accountkit.ui.SkinManager;
+import com.facebook.accountkit.ui.UIManager;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.hoocons.hooconsandroid.R;
 
 import org.json.JSONException;
@@ -80,6 +85,7 @@ public class SocialLoginFragment extends Fragment {
 
     private PhoneLoginFragment phoneLoginFragment;
     private CallbackManager callbackManager;
+    private Intent accountKitIntent;
 
     private String id;
     private String name;
@@ -135,6 +141,26 @@ public class SocialLoginFragment extends Fragment {
 
     private void initAccountKit() {
         AccountKit.initialize(getContext());
+
+        accountKitIntent = new Intent(getActivity(), AccountKitActivity.class);
+
+        UIManager uiManager = new SkinManager(SkinManager.Skin.CONTEMPORARY,
+                getResources().getColor(R.color.colorPrimary),
+                -1, SkinManager.Tint.WHITE, 2f);
+
+        AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
+                new AccountKitConfiguration.AccountKitConfigurationBuilder(
+                        LoginType.PHONE,
+                        AccountKitActivity.ResponseType.TOKEN);
+        configurationBuilder.setUIManager(uiManager);
+        configurationBuilder.setDefaultCountryCode("1");
+        configurationBuilder.setReadPhoneStateEnabled(true);
+
+        accountKitIntent.putExtra(
+                AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION,
+                configurationBuilder.build()
+        );
+
     }
 
     private void initFaceBookCallBack() {
@@ -214,18 +240,7 @@ public class SocialLoginFragment extends Fragment {
     }
 
     private void phoneRegister() {
-        final Intent intent = new Intent(getActivity(), AccountKitActivity.class);
-
-        AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
-                new AccountKitConfiguration.AccountKitConfigurationBuilder(
-                        LoginType.PHONE,
-                        AccountKitActivity.ResponseType.TOKEN);
-
-        intent.putExtra(
-                AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION,
-                configurationBuilder.build());
-
-        startActivityForResult(intent, ACCOUNT_KIT_REQUEST);
+        startActivityForResult(accountKitIntent, ACCOUNT_KIT_REQUEST);
     }
 
     @Override
@@ -309,6 +324,7 @@ public class SocialLoginFragment extends Fragment {
         mFragTransition.replace(R.id.auth_layout_container, phoneLoginFragment, "phone_login");
         mFragTransition.commit();
     }
+
 
     @Override
     public void onDestroyView() {
