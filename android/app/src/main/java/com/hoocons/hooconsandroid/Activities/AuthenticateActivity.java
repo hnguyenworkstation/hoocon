@@ -81,9 +81,9 @@ public class AuthenticateActivity extends BaseActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    /* *********************************
+    /**********************************
     * EVENT BUS CATCHING AREA
-    * **********************************/
+    ***********************************/
     @Subscribe
     public void onEvent(ActionBackClicked actionBackClicked) {
         drawBackStack();

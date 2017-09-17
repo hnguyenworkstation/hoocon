@@ -30,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:id="@+id/login_title"
                 android:textSize="@dimen/large_title_size"
                 android:textColor="@color/text_dark_color"
                 android:textStyle="bold"
@@ -46,8 +47,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:clickable="true"
+                    android:id="@+id/country_picker"
                     android:background="?attr/selectableItemBackground"
-                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_4"
                     android:gravity="center_vertical">
 
                     <TextView
@@ -73,7 +75,7 @@
                     >
 
                     <AutoCompleteTextView
-                        android:id="@+id/phone"
+                        android:id="@+id/phone_input"
                         android:textColor="@color/colorAccent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -113,7 +115,9 @@
                 android:layout_height="@dimen/big_button_height"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/continue_text"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
+                style="?android:textAppearanceMedium"
                 android:theme="@style/Hoocons.Button" />
 
             <Button

@@ -30,6 +30,7 @@
     <string name="add_more_contents">More contents</string>
     <string name="add_tag">Add tags</string>
     <string name="login">Log In</string>
+    <string name="country">Country</string>
 
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>
