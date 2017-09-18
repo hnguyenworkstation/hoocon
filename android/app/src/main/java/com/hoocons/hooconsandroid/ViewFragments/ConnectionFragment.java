@@ -1,6 +1,5 @@
 package com.hoocons.hooconsandroid.ViewFragments;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,15 +8,14 @@ import android.view.ViewGroup;
 
 import com.hoocons.hooconsandroid.R;
 
+public class ConnectionFragment extends Fragment {
 
-public class MoreFragment extends Fragment {
-
-    public MoreFragment() {
+    public ConnectionFragment() {
         // Required empty public constructor
     }
 
-    public static MoreFragment newInstance() {
-        MoreFragment fragment = new MoreFragment();
+    public static ConnectionFragment newInstance() {
+        ConnectionFragment fragment = new ConnectionFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -34,7 +32,7 @@ public class MoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        return inflater.inflate(R.layout.fragment_connection, container, false);
     }
 
 }

@@ -9,15 +9,13 @@ import android.view.ViewGroup;
 
 import com.hoocons.hooconsandroid.R;
 
-
-public class MoreFragment extends Fragment {
-
-    public MoreFragment() {
+public class DiscoverFragment extends Fragment {
+    public DiscoverFragment() {
         // Required empty public constructor
     }
 
-    public static MoreFragment newInstance() {
-        MoreFragment fragment = new MoreFragment();
+    public static DiscoverFragment newInstance() {
+        DiscoverFragment fragment = new DiscoverFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -34,7 +32,7 @@ public class MoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        return inflater.inflate(R.layout.fragment_discover, container, false);
     }
 
 }
