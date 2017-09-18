@@ -20,7 +20,7 @@ import java.util.List;
 public class MainViewPagerAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragmentList = new ArrayList<>();
     private List<String> mFragmentTitle = new ArrayList<>();
-    private final int MAX_FRAGMENTS = 5;
+    private final int MAX_FRAGMENTS = 4;
 
     private FeaturedFragment featuredFragment;
     private DiscoverFragment discoverFragment;
@@ -32,6 +32,11 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
     public MainViewPagerAdapter(Context mContext, FragmentManager manager) {
         super(manager);
         this.mContext = mContext;
+
+        featuredFragment = FeaturedFragment.newInstance();
+        discoverFragment = DiscoverFragment.newInstance();
+        communicationFragment = CommunicationFragment.newInstance();
+        moreFragment = MoreFragment.newInstance();
     }
 
     @Override

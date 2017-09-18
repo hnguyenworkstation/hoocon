@@ -50,6 +50,8 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int position){
+                mBottomTabbar.getMenu().getItem(position).setChecked(true);
+                
                 switch (position) {
                     case 0:
                         break;
