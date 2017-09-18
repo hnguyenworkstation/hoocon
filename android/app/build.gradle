@@ -68,6 +68,7 @@ dependencies {
     compile project(':permission_manager')
     compile project(':jobqueue')
     compile project(':country-code-picker')
+    compile project(':observable_scrollview')
 
     compile 'com.android.support:multidex:1.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
