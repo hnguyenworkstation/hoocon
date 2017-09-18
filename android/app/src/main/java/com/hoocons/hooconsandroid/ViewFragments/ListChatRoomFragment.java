@@ -36,4 +36,8 @@ public class ListChatRoomFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_list_chat_room, container, false);
     }
 
+    public void onRestore() {
+
+    }
+
 }

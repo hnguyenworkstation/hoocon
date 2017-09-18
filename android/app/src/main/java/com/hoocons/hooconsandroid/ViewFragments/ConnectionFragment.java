@@ -35,4 +35,7 @@ public class ConnectionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_connection, container, false);
     }
 
+    public void onRestore() {
+
+    }
 }

@@ -36,4 +36,8 @@ public class NotificationInboxFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_notification_inbox, container, false);
     }
 
+    public void onRestore() {
+
+    }
+
 }
