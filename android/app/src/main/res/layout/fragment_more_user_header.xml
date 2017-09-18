@@ -6,31 +6,44 @@
     android:gravity="center"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <RelativeLayout
         android:layout_width="@dimen/profile_header_large_size"
-        android:layout_height="@dimen/profile_header_large_size"
-        android:src="@drawable/hoocons_image_logo"
-        android:scaleType="fitCenter"
-        android:id="@+id/profile_header"/>
+        android:layout_height="@dimen/profile_header_large_size">
+
+        <ImageView
+            android:layout_width="@dimen/profile_header_large_size"
+            android:layout_height="@dimen/profile_header_large_size"
+            android:src="@drawable/hoocons_image_logo"
+            android:scaleType="fitCenter"
+            android:id="@+id/profile_header"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_photo_camera"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
 
     <TextView
         android:layout_marginTop="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/display_name"
-        android:textSize="@dimen/option_title_size"
+        android:textSize="@dimen/large_title_size"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/dark_text_color"
         android:text="Hung Q Nguyen"/>
 
     <TextView
+        android:layout_marginTop="@dimen/margin_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/nick_name"
         android:textAlignment="center"
-        android:textSize="@dimen/text_14"
-        android:textColor="@color/gray_alpha"
+        android:textSize="@dimen/text_18"
+        android:textColor="@color/colorPrimary"
         android:text="/@hnguyen123"/>
-
 </LinearLayout>
