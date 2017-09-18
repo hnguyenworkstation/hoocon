@@ -3,8 +3,13 @@ package com.hoocons.hooconsandroid.Activities;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.hoocons.hooconsandroid.Adapters.MainViewPagerAdapter;
 import com.hoocons.hooconsandroid.AppController.BaseActivity;
@@ -23,8 +28,11 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.bottom_bar)
     BottomNavigationView mBottomTabbar;
 
+    private TextView textMessagesCount;
+
     private MainViewPagerAdapter mMainViewPagerAdapter;
     private Unbinder unbinder;
+    private int unreadMessagesCount = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +59,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position){
                 mBottomTabbar.getMenu().getItem(position).setChecked(true);
-                
+
                 switch (position) {
                     case 0:
                         break;
@@ -83,6 +91,18 @@ public class MainActivity extends BaseActivity {
         * */
         if (mBottomTabbar != null) {
             BottomNavigationViewHelper.disableShiftMode(mBottomTabbar);
+            mBottomTabbar.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+                @Override
+                public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+                    final MenuItem menuItem = contextMenu.findItem(R.id.tab_communication);
+                    View actionView = menuItem.getActionView();
+
+                    if (actionView != null) {
+                        textMessagesCount = (TextView) actionView.findViewById(R.id.messages_count);
+                        setupBadge();
+                    }
+                }
+            });
             mBottomTabbar.setOnNavigationItemSelectedListener(new BottomNavigationView
                     .OnNavigationItemSelectedListener() {
                 @Override
@@ -106,6 +126,21 @@ public class MainActivity extends BaseActivity {
                     return false;
                 }
             });
+        }
+    }
+
+    private void setupBadge() {
+        if (textMessagesCount != null) {
+            if (unreadMessagesCount == 0) {
+                if (textMessagesCount.getVisibility() != View.GONE) {
+                    textMessagesCount.setVisibility(View.GONE);
+                }
+            } else {
+                textMessagesCount.setText(String.valueOf(Math.min(unreadMessagesCount, 99)));
+                if (textMessagesCount.getVisibility() != View.VISIBLE) {
+                    textMessagesCount.setVisibility(View.VISIBLE);
+                }
+            }
         }
     }
 

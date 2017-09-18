@@ -17,6 +17,7 @@
         android:id="@+id/tab_communication"
         android:icon="@drawable/ic_speech_inactive"
         android:title="@string/messages"
+        android:actionLayout="@layout/custom_bottom_bar_messages_item_layout"
         android:enabled="true"
         app:showAsAction="ifRoom"/>
     <item
