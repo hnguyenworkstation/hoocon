@@ -37,6 +37,9 @@
     <string name="update_info">Update Info</string>
     <string name="empty_field">This field is required</string>
     <string name="pass_too_short">Password must have at least 6 characters</string>
+    <string name="follow">Follow</string>
+    <string name="more">More</string>
+    <string name="discover">Discover</string>
 
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>
