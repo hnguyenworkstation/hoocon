@@ -21,6 +21,8 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import com.hoocons.hooconsandroid.Tasks.JobServices.HooconsGCMJobService;
 import com.hoocons.hooconsandroid.Tasks.JobServices.HooconsJobService;
 
+import io.realm.Realm;
+
 
 /**
  * Created by hungnguyen on 9/16/17.
@@ -33,12 +35,16 @@ public class BaseApplication extends Application {
 
     private JobManager jobManager;
     private RequestManager mGlideRequestManager;
+    private Realm realm;
 
     @Override
     public void onCreate() {
         super.onCreate();
         mInstance = BaseApplication.this;
         context = getApplicationContext();
+
+        /* Init Realm */
+        Realm.init(this);
 
         /* Init Job manager */
         configureJobManager();

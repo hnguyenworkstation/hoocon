@@ -21,6 +21,7 @@ android {
 
         resConfigs "en", "en_US", "vi_VN"
     }
+
     buildTypes {
         release {
             debuggable false
@@ -54,6 +55,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs'
     })
     compile files('libs/rebound-0.3.8.jar')
     compile project(':photopicker')
@@ -124,3 +126,4 @@ dependencies {
 }
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'realm-android'
