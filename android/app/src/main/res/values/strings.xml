@@ -40,6 +40,7 @@
     <string name="follow">Follow</string>
     <string name="more">More</string>
     <string name="discover">Discover</string>
+    <string name="featured">Featured</string>
 
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>

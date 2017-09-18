@@ -35,4 +35,8 @@ public class DiscoverFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_discover, container, false);
     }
 
+    public void onRestore() {
+
+    }
+
 }

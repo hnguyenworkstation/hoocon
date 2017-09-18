@@ -5,22 +5,22 @@
         android:id="@+id/featured"
         android:icon="@drawable/ic_favorite_inactive"
         android:enabled="true"
-        android:title="@string/follow"
+        android:title="@string/featured"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/nearme"
+        android:id="@+id/tab_search"
         android:icon="@drawable/ic_search_inactive"
         android:title="@string/discover"
         android:enabled="true"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/chat_list"
+        android:id="@+id/tab_communication"
         android:icon="@drawable/ic_speech_inactive"
         android:title="@string/messages"
         android:enabled="true"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/action_more"
+        android:id="@+id/tab_more"
         android:icon="@drawable/ic_more_inactive"
         android:title="@string/more"
         android:enabled="true"

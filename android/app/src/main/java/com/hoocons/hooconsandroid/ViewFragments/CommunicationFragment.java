@@ -36,4 +36,8 @@ public class CommunicationFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_communication, container, false);
     }
 
+    public void onRestore() {
+
+    }
+
 }
