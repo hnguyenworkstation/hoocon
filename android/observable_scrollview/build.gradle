@@ -3,13 +3,9 @@ apply from: '../dependencies.gradle'
 
 dependencies {
     compile 'com.android.support:recyclerview-v7:' + versions.supportLib
-
-    androidTestCompile ('com.android.support:appcompat-v7:' + versions.supportLib) {
-        exclude module: 'support-v4'
-    }
-    androidTestCompile ('com.nineoldandroids:library:2.4.0') {
-        exclude module: 'support-v4'
-    }
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.android.support:design:' + versions.supportLib
+    compile 'com.android.support:support-v4:' + versions.supportLib
 }
 
 android {

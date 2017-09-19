@@ -9,8 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/custom_toolbar"
         android:layout_alignParentTop="true">
-
-
+        <include layout="@layout/custom_discover_actionbar"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -31,7 +30,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <include layout="@layout/custom_long_search_bar_view"/>
+                    </LinearLayout>
 
                 </LinearLayout>
             </android.support.v4.widget.NestedScrollView>

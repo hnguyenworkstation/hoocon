@@ -43,6 +43,7 @@
     <string name="featured">Featured</string>
     <string name="inbox">Inbox</string>
     <string name="connection">Connection</string>
+    <string name="search_hoocons">Search Hoocons…</string>
 
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>
