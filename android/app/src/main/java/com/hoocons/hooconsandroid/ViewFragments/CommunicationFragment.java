@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hoocons.hooconsandroid.Adapters.CommunicateViewPagerAdapter;
+import com.hoocons.hooconsandroid.Adapters.CommonViewPagerAdapter;
 import com.hoocons.hooconsandroid.R;
 
 import butterknife.BindView;
@@ -24,7 +24,7 @@ public class CommunicationFragment extends Fragment {
     @BindView(R.id.comm_viewpager)
     ViewPager mViewPager;
 
-    private CommunicateViewPagerAdapter adapter;
+    private CommonViewPagerAdapter adapter;
 
     private ListChatRoomFragment listChatRoomFragment;
     private NotificationInboxFragment notificationInboxFragment;
@@ -75,7 +75,7 @@ public class CommunicationFragment extends Fragment {
             connectionFragment = ConnectionFragment.newInstance();
 
         if (adapter == null) {
-            adapter = new CommunicateViewPagerAdapter(getChildFragmentManager());
+            adapter = new CommonViewPagerAdapter(getChildFragmentManager());
             adapter.addFragment(listChatRoomFragment, getResources().getString(R.string.messages));
             adapter.addFragment(notificationInboxFragment, getResources().getString(R.string.inbox));
             adapter.addFragment(connectionFragment, getResources().getString(R.string.connection));

@@ -11,11 +11,11 @@ import java.util.List;
  * Created by hungnguyen on 9/18/17.
  */
 
-public class CommunicateViewPagerAdapter extends FragmentPagerAdapter {
+public class CommonViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 
-    public CommunicateViewPagerAdapter(FragmentManager manager) {
+    public CommonViewPagerAdapter(FragmentManager manager) {
         super(manager);
     }
 

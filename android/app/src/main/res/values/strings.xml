@@ -47,6 +47,10 @@
     <string name="popular_tour">Popular Tours</string>
     <string name="popular_places">Top Places</string>
 
+    <string name="all">All</string>
+    <string name="journal">Journal</string>
+    <string name="places">Places</string>
+
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>
     <string name="confirmation_code">Confirmation Code</string>
