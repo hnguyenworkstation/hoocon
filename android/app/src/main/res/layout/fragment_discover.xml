@@ -2,20 +2,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.hoocons.hooconsandroid.ViewFragments.DiscoverFragment">
 
-    <RelativeLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/custom_toolbar"
-        android:layout_alignParentTop="true">
-        <include layout="@layout/custom_discover_actionbar"/>
-    </RelativeLayout>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:elevation="@dimen/default_elevation"
+        app:layout_collapseMode="pin"
+        android:layout_alignParentTop="true"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/custom_toolbar">
+        android:layout_below="@+id/toolbar">
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:layout_width="match_parent"

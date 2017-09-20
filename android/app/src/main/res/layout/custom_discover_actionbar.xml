@@ -3,38 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize">
+    android:layout_height="wrap_content">
 
     <TextView
         android:textStyle="bold"
-        android:layout_toStartOf="@+id/question"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_16"
+        android:layout_height="wrap_content"
         android:textAlignment="textStart"
         android:textSize="@dimen/medium_title_size"
         android:textColor="@color/text_med_color"
         android:layout_centerInParent="true"
         android:scaleType="centerInside"
         android:text="@string/discover"/>
-
-    <ImageButton
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/open_map"
-        android:background="@drawable/icon_button"
-        android:id="@+id/add_item"
-        android:layout_width="@dimen/actionbar_icon_size"
-        android:layout_height="@dimen/actionbar_icon_size"
-        android:src="@drawable/ic_add_inactive"
-        android:layout_marginEnd="@dimen/actionbar_margin" />
-
-    <ImageButton
-        android:layout_centerVertical="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/icon_button"
-        android:id="@+id/open_map"
-        android:layout_width="@dimen/actionbar_icon_size"
-        android:layout_height="@dimen/actionbar_icon_size"
-        android:src="@drawable/ic_earth_inactive"
-        android:layout_marginEnd="@dimen/actionbar_margin" />
 </RelativeLayout>

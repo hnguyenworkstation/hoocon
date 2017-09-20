@@ -1,13 +1,17 @@
 package com.hoocons.hooconsandroid.ViewFragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +31,9 @@ public class DiscoverFragment extends Fragment {
     SwipeRefreshLayout mSwipeRef;
     @BindView(R.id.search_bar)
     LinearLayout mSearchBar;
+
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
 
 
     @BindView(R.id.search_text)
@@ -73,9 +80,29 @@ public class DiscoverFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         unbinder = ButterKnife.bind(this, view);
 
+        initToolbar();
         initDefaultTextAndTypeFace();
         initPopularTourRecycler();
         initCountryRecycler();
+    }
+
+    private void initToolbar() {
+        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
+
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+
+        assert actionBar != null;
+        actionBar.setDisplayOptions(actionBar.getDisplayOptions()
+                | ActionBar.DISPLAY_SHOW_CUSTOM);
+
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setTitle(null);
+
+        LayoutInflater inflator = (LayoutInflater) getActivity()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = inflator.inflate(R.layout.custom_discover_actionbar, null);
+
+        actionBar.setCustomView(v);
     }
 
 
