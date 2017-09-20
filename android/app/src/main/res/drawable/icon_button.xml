@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:enterFadeDuration="5"
-    android:exitFadeDuration="5">
+    android:enterFadeDuration="10"
+    android:exitFadeDuration="10">
     <item android:state_pressed="false">
-        <shape android:shape="oval"
-            android:innerRadius="32dp">
+        <shape android:shape="oval">
             <solid android:color="@android:color/transparent" />
         </shape>
     </item>
     <item android:state_pressed="true">
-        <shape android:shape="oval"
-            android:innerRadius="32dp">
+        <shape android:shape="oval">
             <solid android:color="@color/gray_alpha" />
         </shape>
     </item>

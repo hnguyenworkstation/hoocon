@@ -62,11 +62,11 @@ public class MainActivity extends BaseActivity {
 
                 switch (position) {
                     case 0:
-                        break;
-                    case 1:
                         DiscoverFragment dTemp = (DiscoverFragment) mMainViewPagerAdapter.getItem(position);
                         if (dTemp != null)
                             dTemp.onRestore();
+                        break;
+                    case 1:
                         break;
                     case 2:
                         CommunicationFragment cTemp = (CommunicationFragment) mMainViewPagerAdapter.getItem(position);
@@ -108,10 +108,10 @@ public class MainActivity extends BaseActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()){
-                        case R.id.featured:
+                        case R.id.tab_search:
                             mViewPager.setCurrentItem(0);
                             break;
-                        case R.id.tab_search:
+                        case R.id.featured:
                             mViewPager.setCurrentItem(1);
                             break;
                         case R.id.tab_communication:
