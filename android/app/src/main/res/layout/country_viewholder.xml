@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    app:cardCornerRadius="@dimen/margin_8"
+    app:cardElevation="1dp"
+    android:layout_height="@dimen/cardview_country_height">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/cardview_country_height">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_country_height"
+            android:src="@drawable/hoocons_image_logo"
+            android:id="@+id/country_image"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardview_country_height"
+            android:background="@color/black_alpha_12"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_22"
+            android:textStyle="bold"
+            android:text="Viet Nam"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

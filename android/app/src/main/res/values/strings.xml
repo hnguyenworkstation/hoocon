@@ -45,6 +45,7 @@
     <string name="connection">Connection</string>
     <string name="search_hoocons">Search Hoocons…</string>
     <string name="popular_tour">Popular Tours</string>
+    <string name="popular_places">Top Places</string>
 
     <!-- LOGIN SCREENS-->
     <string name="verify_phone_number">Verify Phone Number</string>

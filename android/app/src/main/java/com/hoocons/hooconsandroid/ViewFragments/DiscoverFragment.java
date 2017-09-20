@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.hoocons.hooconsandroid.Adapters.CountryAdapter;
+import com.hoocons.hooconsandroid.Adapters.SmallTourAdapter;
 import com.hoocons.hooconsandroid.R;
 
 import butterknife.BindView;
@@ -23,14 +27,21 @@ public class DiscoverFragment extends Fragment {
     SwipeRefreshLayout mSwipeRef;
     @BindView(R.id.search_bar)
     LinearLayout mSearchBar;
+
+
     @BindView(R.id.search_text)
     TextView mSearchBarText;
     @BindView(R.id.popular_title)
     TextView mPopularTitle;
+
     @BindView(R.id.popular_tour)
     RecyclerView mPopularTourRecycler;
+    @BindView(R.id.popular_places)
+    RecyclerView mPopularPlaces;
 
     private Unbinder unbinder;
+    private SmallTourAdapter mTourAdapter;
+    private CountryAdapter mCountryAdapter;
 
     public DiscoverFragment() {
         // Required empty public constructor
@@ -61,16 +72,50 @@ public class DiscoverFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         unbinder = ButterKnife.bind(this, view);
+
+        initDefaultTextAndTypeFace();
+        initPopularTourRecycler();
+        initCountryRecycler();
     }
+
+
+    private void initDefaultTextAndTypeFace() {
+
+    }
+
+    private void initPopularTourRecycler() {
+        mTourAdapter = new SmallTourAdapter(getContext());
+
+        final RecyclerView.LayoutManager mLayoutManager =
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        mPopularTourRecycler.setLayoutManager(mLayoutManager);
+        mPopularTourRecycler.setItemAnimator(new DefaultItemAnimator());
+        mPopularTourRecycler.setNestedScrollingEnabled(false);
+        mPopularTourRecycler.setHasFixedSize(false);
+        mPopularTourRecycler.setAdapter(mTourAdapter);
+    }
+
+    private void initCountryRecycler() {
+        mCountryAdapter = new CountryAdapter(getContext());
+
+        final RecyclerView.LayoutManager mLayoutManager =
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        mPopularPlaces.setLayoutManager(mLayoutManager);
+        mPopularPlaces.setItemAnimator(new DefaultItemAnimator());
+        mPopularPlaces.setNestedScrollingEnabled(false);
+        mPopularPlaces.setHasFixedSize(false);
+        mPopularPlaces.setAdapter(mCountryAdapter);
+    }
+
+    public void onRestore() {
+
+    }
+
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
-    }
-
-    public void onRestore() {
-
     }
 
 }
