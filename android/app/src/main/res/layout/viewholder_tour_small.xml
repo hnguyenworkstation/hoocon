@@ -3,30 +3,31 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_margin="@dimen/margin_8"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/cardview_country_width"
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/image_root">
+        android:id="@+id/image_root"
+        android:layout_width="@dimen/cardview_country_width"
+        android:layout_height="wrap_content">
 
         <com.hoocons.hooconsandroid.CustomUI.SquareImageView
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/cardview_country_width"
             android:layout_height="wrap_content">
+
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/cardview_country_width"
                 android:layout_height="148dp"
-                android:src="@drawable/hoocons_image_logo"/>
+                android:src="@drawable/hoocons_image_logo" />
         </com.hoocons.hooconsandroid.CustomUI.SquareImageView>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/cardview_country_width"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
+            android:layout_alignParentTop="true"
             android:background="@drawable/scrim_affect_topdown"
-            android:layout_alignParentTop="true">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="24dp"
@@ -36,15 +37,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
                 android:ellipsize="end"
-                android:textColor="@color/white"
-                android:text="Phan Thiet, Binh Thuan"/>
+                android:maxLines="1"
+                android:text="Phan Thiet, Binh Thuan"
+                android:textColor="@color/white" />
         </LinearLayout>
     </RelativeLayout>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/cardview_country_width"
         android:layout_height="wrap_content"
         android:maxLines="2"
         android:ellipsize="end"
@@ -54,7 +55,7 @@
         android:text="Phan Thiet, Binh Thuan"/>
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/cardview_country_width"
         android:layout_height="wrap_content">
 
         <LinearLayout

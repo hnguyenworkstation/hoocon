@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="@dimen/cardview_country_width"
     app:cardCornerRadius="@dimen/margin_8"
     app:cardElevation="1dp"
+    android:layout_margin="@dimen/margin_8"
     android:layout_height="@dimen/cardview_country_height">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/cardview_country_width"
         android:layout_height="@dimen/cardview_country_height">
 
         <ImageView

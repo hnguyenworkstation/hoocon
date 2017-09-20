@@ -22,7 +22,7 @@ public class SmallTourAdapter extends RecyclerView.Adapter<SmallTourViewHolder> 
 
     @Override
     public SmallTourViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tour_small_viewholder, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_tour_small, parent, false);
         return new SmallTourViewHolder(view);
     }
 
