@@ -7,6 +7,12 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
+import android.support.v7.widget.PagerSnapHelper;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.hoocons.hooconsandroid.Adapters.CommonViewPagerAdapter;
+import com.hoocons.hooconsandroid.Adapters.FeaturedIntroAdapter;
 import com.hoocons.hooconsandroid.R;
 
 import butterknife.BindView;
@@ -31,6 +38,8 @@ public class FeaturedFragment extends Fragment {
     TabLayout mTabLayout;
     @BindView(R.id.toolbar)
     Toolbar mToolBar;
+    @BindView(R.id.featured_intro_recycler)
+    RecyclerView mIntroRecycler;
 
     private Unbinder unbinder;
 
@@ -39,6 +48,7 @@ public class FeaturedFragment extends Fragment {
     private FeaturedPlacesFragment featuredPlacesFragment;
 
     private CommonViewPagerAdapter mViewPagerAdapter;
+    private FeaturedIntroAdapter featuredIntroAdapter;
 
     public FeaturedFragment() {
         // Required empty public constructor
@@ -71,11 +81,25 @@ public class FeaturedFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         initDefaultTextAndTypeFace();
+        initIntroRecycler();
         setupViewPager();
     }
 
     private void initDefaultTextAndTypeFace() {
 
+    }
+
+    private void initIntroRecycler() {
+        SnapHelper snapHelper = new PagerSnapHelper();
+
+        featuredIntroAdapter = new FeaturedIntroAdapter(getContext());
+        final RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext(),
+                LinearLayoutManager.HORIZONTAL, false);
+        mIntroRecycler.setLayoutManager(mLayoutManager);
+        mIntroRecycler.setItemAnimator(new DefaultItemAnimator());
+        mIntroRecycler.setAdapter(featuredIntroAdapter);
+
+        snapHelper.attachToRecyclerView(mIntroRecycler);
     }
 
     private void setupViewPager() {

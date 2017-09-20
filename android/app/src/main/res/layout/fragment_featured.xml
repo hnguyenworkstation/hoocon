@@ -31,11 +31,15 @@
                 app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <ImageView
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/image_logo"
-                    android:src="@drawable/hoocons_image_logo"/>
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/featured_intro_recycler"/>
+                </RelativeLayout>
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -45,16 +49,7 @@
                     app:elevation="@dimen/default_elevation"
                     app:layout_collapseMode="pin"
                     app:layout_scrollFlags="scroll|enterAlways"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-                    <ImageView
-                        android:id="@+id/ivLogo"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:scaleType="center"
-                        android:src="@drawable/hoocons_logo" />
-                </android.support.v7.widget.Toolbar>
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
             </android.support.design.widget.CollapsingToolbarLayout>
 
             <FrameLayout
