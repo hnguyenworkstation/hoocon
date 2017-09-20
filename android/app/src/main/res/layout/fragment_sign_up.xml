@@ -27,13 +27,8 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
+                style="@style/LargeTitleText"
                 android:id="@+id/signup_title"
-                android:textSize="@dimen/large_title_size"
-                android:textColor="@color/text_dark_color"
-                android:textStyle="bold"
                 android:layout_marginBottom="@dimen/margin_12"
                 android:text="@string/signup"/>
 
