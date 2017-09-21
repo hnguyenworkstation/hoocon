@@ -9,9 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:id="@+id/custom_toolbar">
-
         <include layout="@layout/custom_authenticate_actionbar"/>
-
     </RelativeLayout>
 
     <ScrollView
@@ -34,11 +32,18 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/header">
+                android:layout_below="@+id/header"
+                android:id="@+id/user_stats">
+                <include layout="@layout/user_stats_layout"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_stats">
                 <include layout="@layout/fragment_more_app_setting"/>
             </RelativeLayout>
 
         </RelativeLayout>
     </ScrollView>
-
 </RelativeLayout>
