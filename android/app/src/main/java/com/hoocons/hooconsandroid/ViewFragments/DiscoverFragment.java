@@ -10,7 +10,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
+import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -120,6 +123,9 @@ public class DiscoverFragment extends Fragment {
         mPopularTourRecycler.setNestedScrollingEnabled(false);
         mPopularTourRecycler.setHasFixedSize(false);
         mPopularTourRecycler.setAdapter(mTourAdapter);
+
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(mPopularTourRecycler);
     }
 
     private void initCountryRecycler() {
@@ -132,6 +138,9 @@ public class DiscoverFragment extends Fragment {
         mPopularPlaces.setNestedScrollingEnabled(false);
         mPopularPlaces.setHasFixedSize(false);
         mPopularPlaces.setAdapter(mCountryAdapter);
+
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(mPopularPlaces);
     }
 
     public void onRestore() {
