@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hoocons.hooconsandroid.Adapters.FeaturedIntroAdapter;
 import com.hoocons.hooconsandroid.Adapters.JournalAdapter;
 import com.hoocons.hooconsandroid.R;
 
@@ -20,7 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 
-public class FeaturedJournalFragment extends Fragment {
+public class SearchGenPeopleFragment extends Fragment {
     @BindView(R.id.recycler)
     RecyclerView mRecycler;
 
@@ -28,12 +27,12 @@ public class FeaturedJournalFragment extends Fragment {
     private Unbinder unbinder;
 
 
-    public FeaturedJournalFragment() {
+    public SearchGenPeopleFragment() {
         // Required empty public constructor
     }
 
-    public static FeaturedJournalFragment newInstance() {
-        FeaturedJournalFragment fragment = new FeaturedJournalFragment();
+    public static SearchGenPeopleFragment newInstance() {
+        SearchGenPeopleFragment fragment = new SearchGenPeopleFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

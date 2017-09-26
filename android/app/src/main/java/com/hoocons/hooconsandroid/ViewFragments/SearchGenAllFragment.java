@@ -9,15 +9,14 @@ import android.view.ViewGroup;
 
 import com.hoocons.hooconsandroid.R;
 
-public class FeaturedAllFragment extends Fragment {
+public class SearchGenAllFragment extends Fragment {
 
-
-    public FeaturedAllFragment() {
+    public SearchGenAllFragment() {
         // Required empty public constructor
     }
 
-    public static FeaturedAllFragment newInstance() {
-        FeaturedAllFragment fragment = new FeaturedAllFragment();
+    public static SearchGenAllFragment newInstance() {
+        SearchGenAllFragment fragment = new SearchGenAllFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;

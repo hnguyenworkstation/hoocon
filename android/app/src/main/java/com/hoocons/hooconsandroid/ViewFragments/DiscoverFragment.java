@@ -38,7 +38,6 @@ public class DiscoverFragment extends Fragment {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
-
     @BindView(R.id.search_text)
     TextView mSearchBarText;
     @BindView(R.id.popular_title)
