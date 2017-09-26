@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/photoview/photoview.iml" filepath="$PROJECT_DIR$/photoview/photoview.iml" />
       <module fileurl="file://$PROJECT_DIR$/text-link-builder/text-link-builder.iml" filepath="$PROJECT_DIR$/text-link-builder/text-link-builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/web_agent/web_agent.iml" filepath="$PROJECT_DIR$/web_agent/web_agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/window_image/window_image.iml" filepath="$PROJECT_DIR$/window_image/window_image.iml" />
     </modules>
   </component>
 </project>
