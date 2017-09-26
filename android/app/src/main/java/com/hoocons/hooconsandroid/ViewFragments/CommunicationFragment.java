@@ -26,7 +26,7 @@ public class CommunicationFragment extends Fragment {
 
     private CommonViewPagerAdapter adapter;
 
-    private ListChatRoomFragment listChatRoomFragment;
+    private ConversationFragment conversationFragment;
     private NotificationInboxFragment notificationInboxFragment;
     private ConnectionFragment connectionFragment;
 
@@ -65,8 +65,8 @@ public class CommunicationFragment extends Fragment {
     }
 
     private void setupViewPager() {
-        if (listChatRoomFragment == null)
-            listChatRoomFragment= ListChatRoomFragment.newInstance();
+        if (conversationFragment == null)
+            conversationFragment = ConversationFragment.newInstance();
 
         if (notificationInboxFragment == null)
             notificationInboxFragment = NotificationInboxFragment.newInstance();
@@ -76,7 +76,7 @@ public class CommunicationFragment extends Fragment {
 
         if (adapter == null) {
             adapter = new CommonViewPagerAdapter(getChildFragmentManager());
-            adapter.addFragment(listChatRoomFragment, getResources().getString(R.string.messages));
+            adapter.addFragment(conversationFragment, getResources().getString(R.string.messages));
             adapter.addFragment(notificationInboxFragment, getResources().getString(R.string.inbox));
             adapter.addFragment(connectionFragment, getResources().getString(R.string.connection));
         }
@@ -98,7 +98,7 @@ public class CommunicationFragment extends Fragment {
                 if (position == 2) {
                     connectionFragment.onRestore();
                 } else if (position == 0) {
-                    listChatRoomFragment.onRestore();
+                    conversationFragment.onRestore();
                 } else if (position == 1) {
                     notificationInboxFragment.onRestore();
                 }
