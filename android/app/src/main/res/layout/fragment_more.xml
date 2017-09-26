@@ -40,7 +40,15 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/user_stats">
+                android:layout_below="@+id/user_stats"
+                android:id="@+id/user_collection">
+                <include layout="@layout/fragment_more_user_collections"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_collection">
                 <include layout="@layout/fragment_more_app_setting"/>
             </RelativeLayout>
 

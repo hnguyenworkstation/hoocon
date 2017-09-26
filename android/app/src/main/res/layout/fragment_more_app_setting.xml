@@ -7,6 +7,7 @@
 
     <TextView
         android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
         android:paddingTop="@dimen/margin_16"
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
@@ -18,20 +19,15 @@
         android:textSize="@dimen/text_14"
         android:textColor="@color/gray_alpha"/>
 
-    <View
-        android:layout_marginStart="@dimen/margin_16"
-        android:layout_marginEnd="@dimen/margin_16"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/decorator_line_height"
-        android:background="@color/gray_alpha"/>
-
     <TextView
+        style="@style/TextWithImageStyle"
         android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
         android:paddingTop="@dimen/margin_16"
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/selector_item_row"
         android:clickable="true"
         android:id="@+id/help_center"
         android:text="@string/help_center"
@@ -46,12 +42,14 @@
         android:background="@color/gray_alpha"/>
 
     <TextView
+        style="@style/TextWithImageStyle"
         android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
         android:paddingTop="@dimen/margin_16"
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/selector_item_row"
         android:clickable="true"
         android:text="@string/rate_and_comment"
         android:textSize="@dimen/text_16"
@@ -65,12 +63,14 @@
         android:background="@color/gray_alpha"/>
 
     <TextView
+        style="@style/TextWithImageStyle"
         android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
         android:paddingTop="@dimen/margin_16"
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/selector_item_row"
         android:clickable="true"
         android:text="@string/report_a_problem"
         android:textSize="@dimen/text_16"
@@ -84,12 +84,14 @@
         android:background="@color/gray_alpha"/>
 
     <TextView
+        style="@style/TextWithImageStyle"
         android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
         android:paddingTop="@dimen/margin_16"
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/selector_item_row"
         android:clickable="true"
         android:text="@string/privacy_and_term"
         android:textSize="@dimen/text_16"
@@ -103,12 +105,14 @@
         android:background="@color/gray_alpha"/>
 
     <TextView
+        style="@style/TextWithImageStyle"
         android:paddingStart="@dimen/margin_16"
+        android:paddingEnd="@dimen/margin_16"
         android:paddingTop="@dimen/margin_16"
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/selector_item_row"
         android:clickable="true"
         android:text="@string/contact_us"
         android:textSize="@dimen/text_16"
@@ -122,12 +126,13 @@
         android:background="@color/gray_alpha"/>
 
     <TextView
+        style="@style/TextWithImageStyle"
         android:paddingStart="@dimen/margin_16"
         android:paddingTop="@dimen/margin_16"
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
+        android:background="@drawable/selector_item_row"
         android:clickable="true"
         android:text="@string/logout"
         android:textSize="@dimen/text_16"
