@@ -3,13 +3,20 @@ package com.hoocons.hooconsandroid.ViewFragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.hoocons.hooconsandroid.R;
 
+import butterknife.BindView;
+
 public class NotificationInboxFragment extends Fragment {
+    @BindView(R.id.notif_recycler)
+    RecyclerView mNotifRecycler;
+
+    
 
     public NotificationInboxFragment() {
         // Required empty public constructor

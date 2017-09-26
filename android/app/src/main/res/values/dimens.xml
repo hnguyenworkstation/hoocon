@@ -31,6 +31,7 @@
     <dimen name="actionbar_margin">12dp</dimen>
 
     <dimen name="chat_input">32dp</dimen>
+    <dimen name="notif_avatar_size">60dip</dimen>
 
     <dimen name="sticker_height">100dp</dimen>
     <dimen name="chat_avatar_width">18dp</dimen>

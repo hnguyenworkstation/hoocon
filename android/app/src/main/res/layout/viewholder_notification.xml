@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/contactitem_layout"
+        style="@style/RowItemRecycle"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <com.hoocons.hooconsandroid.CustomUI.SquareImageView
+            android:layout_width="@dimen/notif_avatar_size"
+            android:layout_height="@dimen/notif_avatar_size"
+            android:layout_margin="@dimen/margin_8">
+
+            <com.hoocons.hooconsandroid.CustomUI.AdjustableImageView
+                android:id="@+id/notif_profile"
+                android:layout_width="@dimen/notif_avatar_size"
+                android:layout_height="@dimen/notif_avatar_size"
+                android:src="@drawable/hoocons_image_logo" />
+        </com.hoocons.hooconsandroid.CustomUI.SquareImageView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dip"
+            android:layout_weight="1.0"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/notif_content"
+                style="@style/RowItemTitleRecycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="hello, my name is Hung, hello, my name is <b>Hung Nguyen</b>... \nmy name is <b>Hung Nguyen</b>"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notif_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_circle_question_mark" />
+
+                <TextView
+                    android:id="@+id/notif_time"
+                    style="@style/RowItemTitleRecycle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="12 hours ago"
+                    android:textColor="@color/black_alpha_30"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ffeeeeee" />
+</LinearLayout>

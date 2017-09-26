@@ -8,14 +8,14 @@
     <LinearLayout
         android:id="@+id/contactitem_layout"
         style="@style/RowItemRecycle"
-        android:layout_height="55dip"
-        android:background="@color/white"
-        android:paddingLeft="16dip">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
         <RelativeLayout
             android:id="@+id/avatar_container"
             android:layout_width="55dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_8"
             android:layout_alignParentLeft="true"
             android:layout_marginTop="2dp">
 
