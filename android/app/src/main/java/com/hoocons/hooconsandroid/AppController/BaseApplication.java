@@ -18,6 +18,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
+import com.hoocons.hooconsandroid.R;
 import com.hoocons.hooconsandroid.Tasks.JobServices.HooconsGCMJobService;
 import com.hoocons.hooconsandroid.Tasks.JobServices.HooconsJobService;
 
@@ -126,8 +127,6 @@ public class BaseApplication extends Application {
     public static synchronized BaseApplication getInstance() {
         return mInstance;
     }
-
-
 
     @Override
     public void onTerminate() {

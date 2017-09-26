@@ -43,13 +43,13 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                if (discoverFragment == null)
-                    discoverFragment = DiscoverFragment.newInstance();
-                return discoverFragment;
-            case 1:
                 if (featuredFragment == null)
                     featuredFragment = FeaturedFragment.newInstance();
                 return featuredFragment;
+            case 1:
+                if (discoverFragment == null)
+                    discoverFragment = DiscoverFragment.newInstance();
+                return discoverFragment;
             case 2:
                 if (communicationFragment == null) {
                     communicationFragment = CommunicationFragment.newInstance();

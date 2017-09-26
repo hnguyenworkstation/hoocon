@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/contactitem_layout"
+        style="@style/RowItemRecycle"
+        android:layout_height="55dip"
+        android:background="@color/white"
+        android:paddingLeft="16dip">
+
+        <RelativeLayout
+            android:id="@+id/avatar_container"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:id="@+id/contactitem_avatar_iv"
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                android:src="@drawable/hoocons_image_logo" />
+
+            <TextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/badge_background"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical"
+            android:paddingStart="5dip">
+
+            <TextView
+                android:id="@+id/txt_name"
+                style="@style/RowItemTitleRecycle"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Hung Nguyen"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:text="hello, my name is Hung"
+                android:id="@+id/txt_content"
+                style="@style/RowItemTitleRecycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_name"
+                android:layout_marginTop="2dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/gray_alpha"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_time"
+            style="@style/RowItemTitleRecycle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="top"
+            android:singleLine="true"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ffeeeeee" />
+</LinearLayout>

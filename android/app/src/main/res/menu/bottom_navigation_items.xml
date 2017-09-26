@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/tab_search"
-        android:icon="@drawable/ic_search_inactive"
-        android:title="@string/discover"
-        android:enabled="true"
-        app:showAsAction="ifRoom"/>
-    <item
         android:id="@+id/featured"
         android:icon="@drawable/ic_favorite_inactive"
         android:enabled="true"
         android:title="@string/featured"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/tab_search"
+        android:icon="@drawable/ic_search_inactive"
+        android:title="@string/discover"
+        android:enabled="true"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/tab_communication"

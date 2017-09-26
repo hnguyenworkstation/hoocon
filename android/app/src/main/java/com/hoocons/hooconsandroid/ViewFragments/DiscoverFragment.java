@@ -1,6 +1,5 @@
 package com.hoocons.hooconsandroid.ViewFragments;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,10 +15,17 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.facebook.rebound.BaseSpringSystem;
+import com.facebook.rebound.SimpleSpringListener;
+import com.facebook.rebound.Spring;
+import com.facebook.rebound.SpringSystem;
+import com.facebook.rebound.SpringUtil;
 
 import com.hoocons.hooconsandroid.Adapters.CountryAdapter;
 import com.hoocons.hooconsandroid.Adapters.SmallTourAdapter;
@@ -32,7 +38,8 @@ import butterknife.Unbinder;
 public class DiscoverFragment extends Fragment {
     @BindView(R.id.swipe_ref)
     SwipeRefreshLayout mSwipeRef;
-    @BindView(R.id.search_bar)
+
+    @BindView(R.id.discover_search_bar)
     LinearLayout mSearchBar;
 
     @BindView(R.id.toolbar)
@@ -51,6 +58,9 @@ public class DiscoverFragment extends Fragment {
     private Unbinder unbinder;
     private SmallTourAdapter mTourAdapter;
     private CountryAdapter mCountryAdapter;
+
+    private final BaseSpringSystem mSpringSystem = SpringSystem.create();
+    private Spring mScaleSpring;
 
     public DiscoverFragment() {
         // Required empty public constructor
@@ -83,9 +93,42 @@ public class DiscoverFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         initToolbar();
+        initScaleOnTouch();
         initDefaultTextAndTypeFace();
         initPopularTourRecycler();
         initCountryRecycler();
+    }
+
+    private void initScaleOnTouch() {
+        // Init submit button affect
+        // Create the animation spring.
+        mScaleSpring = mSpringSystem.createSpring();
+        mScaleSpring.addListener(new SimpleSpringListener() {
+            @Override
+            public void onSpringUpdate(Spring spring) {
+                // You can observe the updates in the spring
+                // state by asking its current value in onSpringUpdate.
+                float mappedValue = (float) SpringUtil.mapValueFromRangeToRange(spring.getCurrentValue(), 0, 1, 1, 0.5);
+                mSearchBar.setScaleX(mappedValue);
+                mSearchBar.setScaleY(mappedValue);
+            }
+        });
+
+        mSearchBar.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        mScaleSpring.setEndValue(0.3);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        mScaleSpring.setEndValue(0);
+                        break;
+                }
+                return false;
+            }
+        });
     }
 
     private void initToolbar() {
@@ -152,5 +195,4 @@ public class DiscoverFragment extends Fragment {
         super.onDestroyView();
         unbinder.unbind();
     }
-
 }
