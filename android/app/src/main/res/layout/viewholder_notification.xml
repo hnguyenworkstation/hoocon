@@ -39,7 +39,7 @@
                 android:ellipsize="end"
                 android:maxLines="3"
                 android:text="hello, my name is Hung, hello, my name is Hung Nguyen. my name is Hung Nguyen"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

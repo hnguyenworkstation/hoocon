@@ -62,7 +62,7 @@
                 android:maxLines="1"
                 android:ellipsize="end"
                 android:textColor="@color/gray_alpha"
-                android:textSize="12sp" />
+                android:textSize="14sp" />
         </RelativeLayout>
 
         <TextView
