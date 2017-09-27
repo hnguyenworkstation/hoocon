@@ -38,7 +38,7 @@
                 android:layout_marginTop="2dp"
                 android:ellipsize="end"
                 android:maxLines="3"
-                android:text="hello, my name is Hung, hello, my name is <b>Hung Nguyen</b>... \nmy name is <b>Hung Nguyen</b>"
+                android:text="hello, my name is Hung, hello, my name is Hung Nguyen. my name is Hung Nguyen"
                 android:textSize="12sp" />
 
             <LinearLayout
