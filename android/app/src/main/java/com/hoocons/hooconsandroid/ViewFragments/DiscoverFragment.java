@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
@@ -39,8 +40,8 @@ public class DiscoverFragment extends Fragment {
     @BindView(R.id.swipe_ref)
     SwipeRefreshLayout mSwipeRef;
 
-    @BindView(R.id.discover_search_bar)
-    LinearLayout mSearchBar;
+    @BindView(R.id.search_bar)
+    CardView mSearchBar;
 
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
