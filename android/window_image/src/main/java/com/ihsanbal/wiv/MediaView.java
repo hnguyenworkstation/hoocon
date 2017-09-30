@@ -165,6 +165,11 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
         final int height = MeasureSpec.getSize(heightMeasureSpec);
         final int halfWidth = (width - mediaDividerSize) / 2;
         final int halfHeight = (height - mediaDividerSize) / 2;
+
+        final int thirdWidth = (width - mediaDividerSize) / 3;
+        final int thirdHeight = (height - mediaDividerSize) / 3;
+        final int twoThirdHeight = height - thirdHeight;
+
         switch (imageCount) {
             case 1:
                 measureImageView(0, width, height);
@@ -179,10 +184,17 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
                 measureImageView(2, halfWidth, halfHeight);
                 break;
             case 4:
-                measureImageView(0, halfWidth, halfHeight);
-                measureImageView(1, halfWidth, halfHeight);
-                measureImageView(2, halfWidth, halfHeight);
-                measureImageView(3, halfWidth, halfHeight);
+                measureImageView(0, width, halfHeight);
+                measureImageView(1, thirdWidth, halfHeight);
+                measureImageView(2, thirdWidth, halfHeight);
+                measureImageView(3, thirdWidth, halfHeight);
+                break;
+            case 5:
+                measureImageView(0, halfWidth, twoThirdHeight);
+                measureImageView(1, halfWidth, twoThirdHeight);
+                measureImageView(2, thirdWidth, thirdHeight);
+                measureImageView(3, thirdWidth, thirdHeight);
+                measureImageView(4, thirdWidth, thirdHeight);
                 break;
             default:
                 break;
@@ -199,9 +211,19 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
     void layoutImages() {
         int width = getMeasuredWidth();
         int height = getMeasuredHeight();
+
         int halfWidth = (width - mediaDividerSize) / 2;
         int halfHeight = (height - mediaDividerSize) / 2;
+
+        int thirdHeight = (height - mediaDividerSize) / 3;
+        int twoThirdHeight = height - thirdHeight;
+        int thirdWidth = (width - mediaDividerSize) / 3;
+
+        int oneThirdWidth = thirdWidth + mediaDividerSize;
+        int twoThirdHeightDec = twoThirdHeight + mediaDividerSize;
+
         int middle = halfWidth + mediaDividerSize;
+
         switch (imageCount) {
             case 1:
                 layoutImage(0, 0, 0, width, height);
@@ -216,10 +238,17 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
                 layoutImage(2, middle, halfHeight + mediaDividerSize, width, height);
                 break;
             case 4:
-                layoutImage(0, 0, 0, halfWidth, halfHeight);
-                layoutImage(2, 0, halfHeight + mediaDividerSize, halfWidth, height);
-                layoutImage(1, middle, 0, width, halfHeight);
-                layoutImage(3, middle, halfHeight + mediaDividerSize, width, height);
+                layoutImage(0, 0, 0, width, halfHeight);
+                layoutImage(1, 0, halfHeight + mediaDividerSize, thirdWidth, height);
+                layoutImage(2, oneThirdWidth, halfHeight + mediaDividerSize, thirdWidth * 2, height);
+                layoutImage(3, oneThirdWidth * 2 - mediaDividerSize, halfHeight + mediaDividerSize, width, height);
+                break;
+            case 5:
+                layoutImage(0, 0, 0, halfWidth, twoThirdHeight);
+                layoutImage(1, middle, 0, width, twoThirdHeight);
+                layoutImage(2, 0, twoThirdHeightDec, thirdWidth, height);
+                layoutImage(3, oneThirdWidth, twoThirdHeightDec, thirdWidth * 2, height);
+                layoutImage(4, oneThirdWidth * 2 - mediaDividerSize, twoThirdHeightDec, width, height);
                 break;
             default:
                 break;

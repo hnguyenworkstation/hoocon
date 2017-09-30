@@ -26,8 +26,8 @@ import butterknife.Unbinder;
 
 public class FeaturedFeedViewHolder extends RecyclerView.ViewHolder {
     @Nullable
-    @BindView(R.id.event_twowayview)
-    TwoWayView mEventMediaView;
+    @BindView(R.id.event_media)
+    MediaView mEventMediaView;
 
     private Unbinder unbinder;
 
@@ -42,15 +42,15 @@ public class FeaturedFeedViewHolder extends RecyclerView.ViewHolder {
         images.add("http://www.incrediblesnaps.com/wp-content/uploads/2013/08/25-beautiful-love-birds-pictures-3.jpg");
         images.add("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_960_720.jpg");
         images.add("https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/03/1458289957powerful-images3.jpg");
+        images.add("https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_960_720.jpg");
 
-        mEventMediaView.setHasFixedSize(true);
-        mEventMediaView.setLongClickable(true);
-        mEventMediaView.setOrientation(TwoWayLayoutManager.Orientation.VERTICAL);
-        mEventMediaView.setAdapter(new FeaturedFeedImagesAdapter(
-                context,
-                images,
-                mEventMediaView.getOrientation() == TwoWayLayoutManager.Orientation.VERTICAL)
-        );
+        mEventMediaView.setOnMediaClickListener(new MediaView.OnMediaClickListener() {
+            @Override
+            public void onMediaClick(View view, int index) {
+                Snackbar.make(view, "onClickIndex :" + index, Snackbar.LENGTH_LONG).show();
+            }
+        });
+        mEventMediaView.setMedias(images);
     }
 
     public void detachView() {
