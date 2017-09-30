@@ -107,6 +107,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -122,7 +123,8 @@
             android:name=".Activities.CollectNewUserInfoActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activities.SearchGeneralActivity"></activity>
+        <activity android:name=".Activities.SearchGeneralActivity" />
+        <activity android:name=".Activities.WebPageActivity"></activity>
     </application>
 
 </manifest>

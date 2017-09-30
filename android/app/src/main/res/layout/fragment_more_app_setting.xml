@@ -112,6 +112,7 @@
         android:paddingBottom="@dimen/margin_16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/contact_us"
         android:background="@drawable/selector_item_row"
         android:clickable="true"
         android:text="@string/contact_us"
