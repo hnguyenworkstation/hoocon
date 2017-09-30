@@ -46,6 +46,7 @@
     <dimen name="large_title_size">38sp</dimen>
     <dimen name="medium_title_size">24sp</dimen>
     <dimen name="small_title_size">18sp</dimen>
+    <dimen name="event_content_text_size">16sp</dimen>
 
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_4">4dp</dimen>

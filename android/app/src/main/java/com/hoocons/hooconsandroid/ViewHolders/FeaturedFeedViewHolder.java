@@ -9,6 +9,7 @@ import com.hoocons.hooconsandroid.Adapters.FeaturedFeedImagesAdapter;
 import com.hoocons.hooconsandroid.R;
 import com.ihsanbal.wiv.MediaView;
 
+import org.lucasr.twowayview.TwoWayLayoutManager;
 import org.lucasr.twowayview.widget.TwoWayView;
 
 import java.util.ArrayList;
@@ -44,7 +45,12 @@ public class FeaturedFeedViewHolder extends RecyclerView.ViewHolder {
 
         mEventMediaView.setHasFixedSize(true);
         mEventMediaView.setLongClickable(true);
-        mEventMediaView.setAdapter(new FeaturedFeedImagesAdapter(context, images, mEventMediaView));
+        mEventMediaView.setOrientation(TwoWayLayoutManager.Orientation.VERTICAL);
+        mEventMediaView.setAdapter(new FeaturedFeedImagesAdapter(
+                context,
+                images,
+                mEventMediaView.getOrientation() == TwoWayLayoutManager.Orientation.VERTICAL)
+        );
     }
 
     public void detachView() {

@@ -19,7 +19,7 @@ import com.hoocons.hooconsandroid.CustomUI.AdjustableImageView;
  */
 
 public class ImageLoader {
-    public static void loadAdjustView(AdjustableImageView view, String url, final ProgressBar progressBar) {
+    public static void loadAdjustImage(AdjustableImageView view, String url, final ProgressBar progressBar) {
         if (view == null) {
             return;
         }
