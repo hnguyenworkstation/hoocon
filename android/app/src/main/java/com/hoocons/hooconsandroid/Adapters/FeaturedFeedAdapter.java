@@ -34,7 +34,7 @@ public class FeaturedFeedAdapter extends RecyclerView.Adapter<FeaturedFeedViewHo
 
     @Override
     public void onBindViewHolder(FeaturedFeedViewHolder holder, int position) {
-        holder.initView();
+        holder.initView(context);
     }
 
     @Override

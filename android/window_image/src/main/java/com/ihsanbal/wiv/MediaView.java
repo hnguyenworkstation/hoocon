@@ -30,7 +30,7 @@ import java.util.List;
 
 public class MediaView extends ViewGroup implements View.OnClickListener {
 
-    static final int MAX_IMAGE_VIEW_COUNT = 4;
+    static final int MAX_IMAGE_VIEW_COUNT = 8;
     private static final CharSequence CONTENT_DESC = "content_description";
 
     private static final int DEFAULT_DIVIDER_SIZE = 2;
@@ -39,11 +39,15 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
     private final OverlayImageView[] imageViews = new OverlayImageView[MAX_IMAGE_VIEW_COUNT];
     private RequestManager imageLoader;
     private List<String> mediaEntities = Collections.emptyList();
+
     private final Path path = new Path();
     private final RectF rect = new RectF();
+
     private int mediaDividerSize;
     private int imageCount;
+
     final float[] radii = new float[8];
+
     int mediaBgColor;
     int photoErrorResId;
 
@@ -156,7 +160,7 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
         requestLayout();
     }
 
-    Size measureImages(int widthMeasureSpec, int heightMeasureSpec) {
+    private Size measureImages(int widthMeasureSpec, int heightMeasureSpec) {
         final int width = MeasureSpec.getSize(widthMeasureSpec);
         final int height = MeasureSpec.getSize(heightMeasureSpec);
         final int halfWidth = (width - mediaDividerSize) / 2;
@@ -291,6 +295,7 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
 
     void setMediaImage(final ImageView imageView, String imagePath) {
         if (imageLoader == null) return;
+
         imageLoader.load(imagePath)
                 .apply(RequestOptions.fitCenterTransform())
                 .apply(RequestOptions.centerCropTransform())

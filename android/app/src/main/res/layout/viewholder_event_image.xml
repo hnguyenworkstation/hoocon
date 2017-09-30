@@ -33,21 +33,15 @@ Read more at: https://www.brainyquote.com/authors/steve_jobs"
             android:ellipsize="end"
             android:textColor="@color/text_dark_color" />
 
-        <com.ihsanbal.wiv.AspectRatioLayout
+        <org.lucasr.twowayview.widget.TwoWayView
+            android:id="@+id/event_twowayview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:aspect_ratio="1"
-            app:dimension_to_adjust="height">
-
-            <com.ihsanbal.wiv.MediaView
-                android:id="@+id/event_mediaview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_8"
-                app:background_color="@android:color/white"
-                app:corner_radii="15dp"
-                app:divider_size="2dp" />
-        </com.ihsanbal.wiv.AspectRatioLayout>
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            app:twowayview_layoutManager="SpannableGridLayoutManager"
+            app:twowayview_numColumns="3"
+            app:twowayview_numRows="2" />
 
         <LinearLayout
             android:layout_width="match_parent"

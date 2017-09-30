@@ -13,5 +13,6 @@
         <attr name="place_holder" format="integer" />
         <attr name="corner_radii" format="dimension" />
         <attr name="background_color" format="color" />
+        <attr name="more_image_background" format="integer" />
     </declare-styleable>
 </resources>
