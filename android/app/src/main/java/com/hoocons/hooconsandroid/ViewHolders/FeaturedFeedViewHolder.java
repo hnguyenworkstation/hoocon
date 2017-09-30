@@ -3,8 +3,15 @@ package com.hoocons.hooconsandroid.ViewHolders;
 import android.content.Context;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
+import com.facebook.rebound.BaseSpringSystem;
+import com.facebook.rebound.SimpleSpringListener;
+import com.facebook.rebound.Spring;
+import com.facebook.rebound.SpringSystem;
+import com.facebook.rebound.SpringUtil;
 import com.hoocons.hooconsandroid.Adapters.FeaturedFeedImagesAdapter;
 import com.hoocons.hooconsandroid.R;
 import com.ihsanbal.wiv.MediaView;
@@ -31,6 +38,9 @@ public class FeaturedFeedViewHolder extends RecyclerView.ViewHolder {
 
     private Unbinder unbinder;
 
+    private final BaseSpringSystem mSpringSystem = SpringSystem.create();
+    private Spring mScaleSpring;
+
     public FeaturedFeedViewHolder(View itemView) {
         super(itemView);
         unbinder = ButterKnife.bind(this, itemView);
@@ -47,7 +57,7 @@ public class FeaturedFeedViewHolder extends RecyclerView.ViewHolder {
         mEventMediaView.setOnMediaClickListener(new MediaView.OnMediaClickListener() {
             @Override
             public void onMediaClick(View view, int index) {
-                Snackbar.make(view, "onClickIndex :" + index, Snackbar.LENGTH_LONG).show();
+                Toast.makeText(context, "onClickIndex :" + index, Toast.LENGTH_SHORT).show();
             }
         });
         mEventMediaView.setMedias(images);

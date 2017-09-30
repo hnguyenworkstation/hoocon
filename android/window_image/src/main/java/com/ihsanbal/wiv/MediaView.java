@@ -12,6 +12,7 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -28,7 +29,7 @@ import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.List;
 
-public class MediaView extends ViewGroup implements View.OnClickListener {
+public class MediaView extends ViewGroup implements View.OnClickListener, View.OnTouchListener {
 
     static final int MAX_IMAGE_VIEW_COUNT = 8;
     private static final CharSequence CONTENT_DESC = "content_description";
@@ -53,6 +54,7 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
 
     boolean internalRoundedCornersEnabled;
     private OnMediaClickListener onMediaClickListener;
+    private OnMediaTouchListener onMediaTouchListener;
     private int roundedCornersRadii;
 
     public MediaView(Context context) {
@@ -139,8 +141,25 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
         this.onMediaClickListener = onMediaClickListener;
     }
 
+    public void setOnMediaTouchListener(OnMediaTouchListener onMediaTouchListener) {
+        this.onMediaTouchListener = onMediaTouchListener;
+    }
+
+    @Override
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        Integer mediaEntityIndex = (Integer) view.getTag();
+        if (onMediaTouchListener != null && mediaEntities != null && !mediaEntities.isEmpty()) {
+            onMediaTouchListener.onMediaTouch(view, mediaEntityIndex);
+        }
+        return false;
+    }
+
     public interface OnMediaClickListener {
         void onMediaClick(View view, int index);
+    }
+
+    public interface OnMediaTouchListener {
+        void onMediaTouch(final View view, int index);
     }
 
     @Override
@@ -280,7 +299,7 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
 
         for (int index = 0; index < imageCount; index++) {
             final OverlayImageView imageView = getOrCreateImageView(index);
-
+            imageView.bringToFront();
             final String mediaEntity = mediaEntities.get(index);
             setAltText(imageView, "media");
             setMediaImage(imageView, mediaEntity);
@@ -294,6 +313,7 @@ public class MediaView extends ViewGroup implements View.OnClickListener {
             imageView = new OverlayImageView(getContext());
             imageView.setLayoutParams(generateDefaultLayoutParams());
             imageView.setOnClickListener(this);
+            imageView.setOnTouchListener(this);
             imageViews[index] = imageView;
             addView(imageView, index);
         } else {
