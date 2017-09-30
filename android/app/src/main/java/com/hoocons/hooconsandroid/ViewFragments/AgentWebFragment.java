@@ -185,9 +185,6 @@ public class AgentWebFragment extends Fragment implements OnWebViewKeyDown, View
         @Override
         public void onReceivedTitle(WebView view, String title) {
             if (mToolbarTitle != null && !TextUtils.isEmpty(title)) {
-                if (title.length() > 10)
-                    title = title.substring(0, 10).concat("...");
-
                 mToolbarTitle.setText(title);
             }
         }

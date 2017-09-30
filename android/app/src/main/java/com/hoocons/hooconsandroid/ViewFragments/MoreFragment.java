@@ -25,6 +25,8 @@ import butterknife.Unbinder;
 public class MoreFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.contact_us)
     TextView mContactUs;
+    @BindView(R.id.app_info)
+    TextView mAppInfo;
 
     private Unbinder unbinder;
 
@@ -67,6 +69,7 @@ public class MoreFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initClickListener() {
+        mAppInfo.setOnClickListener(this);
         mContactUs.setOnClickListener(this);
     }
 
@@ -79,6 +82,9 @@ public class MoreFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.app_info:
+                AppUtils.loadWebsite(getContext(), getActivity(), "https://www.youtube.com/watch?v=ql3QS4bzcWg");
+                break;
             case R.id.contact_us:
                 AppUtils.loadWebsite(getContext(), getActivity(), "https://www.linkedin.com/in/hnguyen1193/");
                 break;

@@ -23,8 +23,7 @@
             android:src="@mipmap/back"
             android:background="@drawable/image_button_selector"
             android:scaleType="center"
-            android:clickable="true"
-            />
+            android:clickable="true" />
 
         <View
             android:id="@+id/view_line"
@@ -47,13 +46,16 @@
             />
 
         <TextView
+            android:layout_toEndOf="@+id/iv_finish"
+            android:layout_toStartOf="@+id/iv_more"
             android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="end"
             android:textColor="@android:color/white"
-            android:textSize="14sp"/>
+            android:textSize="16sp"/>
 
 
         <ImageView
