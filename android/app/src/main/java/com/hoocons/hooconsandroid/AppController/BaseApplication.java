@@ -32,7 +32,8 @@ import io.realm.Realm;
 public class BaseApplication extends Application {
     public static final String TAG = BaseApplication.class
             .getSimpleName();
-    public static BaseApplication mInstance;
+
+    private static BaseApplication mInstance;
     public static Context context;
 
     private JobManager jobManager;
@@ -61,7 +62,7 @@ public class BaseApplication extends Application {
         BasePreferenceManager.init(this);
 
         /* Init Glide */
-        mGlideRequestManager = Glide.with(this);
+        mGlideRequestManager = Glide.with(getBaseContext());
 
         /* Fixing URI exposed */
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();

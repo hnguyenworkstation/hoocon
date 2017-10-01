@@ -13,6 +13,7 @@ import java.lang.annotation.Annotation;
 /**
  * Created by hungnguyen on 9/30/17.
  */
+@GlideModule
 public class GlideConfiguration extends AppGlideModule {
 
     @Override
