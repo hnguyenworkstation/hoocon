@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ViewFragments.FeaturedFragment">
+
+    <item
+        android:id="@+id/new_event_menu"
+        android:icon="@drawable/ic_add_inactive"
+        android:title="@string/new_event"
+        app:showAsAction="always"
+        android:orderInCategory="1"/>
+</menu>

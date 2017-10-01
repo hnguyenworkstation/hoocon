@@ -123,4 +123,5 @@
     <string name="copy_url">Copy URL</string>
     <string name="clean_cache">Clean Cache</string>
     <string name="default_browser">Default Browser</string>
+    <string name="new_event">New Event</string>
 </resources>

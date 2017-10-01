@@ -58,6 +58,9 @@
         <meta-data
             android:name="com.facebook.accountkit.ClientToken"
             android:value="@string/facebook_account_kit" />
+        <meta-data
+            android:name="com.hoocons.hooconsandroid.Configurations.GlideConfiguration"
+            android:value="GlideModule"/>
 
         <service android:name=".Tasks.JobServices.FirebaseMessageService">
             <intent-filter>
@@ -123,8 +126,15 @@
             android:name=".Activities.CollectNewUserInfoActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activities.SearchGeneralActivity" />
-        <activity android:name=".Activities.WebPageActivity"></activity>
+        <activity android:name=".Activities.SearchGeneralActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.WebPageActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Activities.NewEventActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

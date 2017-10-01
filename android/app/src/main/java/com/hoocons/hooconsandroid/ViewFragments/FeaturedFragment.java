@@ -1,5 +1,7 @@
 package com.hoocons.hooconsandroid.ViewFragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -7,6 +9,8 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
@@ -16,13 +20,19 @@ import android.support.v7.widget.SnapHelper;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hoocons.hooconsandroid.Activities.MainActivity;
+import com.hoocons.hooconsandroid.Activities.NewEventActivity;
 import com.hoocons.hooconsandroid.Adapters.CommonViewPagerAdapter;
 import com.hoocons.hooconsandroid.Adapters.CountryAdapter;
 import com.hoocons.hooconsandroid.Adapters.FeaturedFeedAdapter;
 import com.hoocons.hooconsandroid.Adapters.FeaturedIntroAdapter;
+import com.hoocons.hooconsandroid.Helpers.AppUtils;
 import com.hoocons.hooconsandroid.R;
 
 import butterknife.BindView;
@@ -32,6 +42,8 @@ import butterknife.Unbinder;
 public class FeaturedFragment extends Fragment {
     @BindView(R.id.featured_recycler)
     RecyclerView mFeaturedRecycler;
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
 
     private Unbinder unbinder;
     private FeaturedFeedAdapter mFeaturedAdapter;
@@ -67,7 +79,30 @@ public class FeaturedFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         unbinder = ButterKnife.bind(this, view);
 
+        initToolbar();
         initRecyclerView();
+    }
+
+    private void initToolbar() {
+        setHasOptionsMenu(true);
+
+        ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
+
+        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+
+        assert actionBar != null;
+        actionBar.setDisplayOptions(actionBar.getDisplayOptions()
+                | ActionBar.DISPLAY_SHOW_CUSTOM);
+
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setTitle(null);
+
+        LayoutInflater inflater = (LayoutInflater) getActivity()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = inflater.inflate(R.layout.custom_discover_actionbar, null);
+
+        actionBar.setCustomView(v);
+        mToolbar.inflateMenu(R.menu.featured_menu);
     }
 
     private void initRecyclerView() {
@@ -83,5 +118,22 @@ public class FeaturedFragment extends Fragment {
 
         SnapHelper snapHelper = new LinearSnapHelper();
         snapHelper.attachToRecyclerView(mFeaturedRecycler);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.featured_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.new_event_menu:
+                AppUtils.startNewActivity(getContext(), getActivity(), NewEventActivity.class);
+                break;
+        }
+
+        return true;
     }
 }

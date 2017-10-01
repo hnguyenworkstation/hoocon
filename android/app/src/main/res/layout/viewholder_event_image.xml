@@ -38,7 +38,7 @@ Read more at: https://www.brainyquote.com/authors/steve_jobs"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:aspect_ratio="1"
-            android:layout_margin="@dimen/margin_12"
+            android:layout_margin="@dimen/margin_8"
             app:dimension_to_adjust="height">
 
             <com.ihsanbal.wiv.MediaView

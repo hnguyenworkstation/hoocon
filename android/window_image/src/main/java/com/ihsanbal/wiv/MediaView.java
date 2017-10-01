@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
@@ -344,10 +346,13 @@ public class MediaView extends ViewGroup implements View.OnClickListener, View.O
 
     void setMediaImage(final ImageView imageView, String imagePath) {
         if (imageLoader == null) return;
+        final WeakReference<ImageView> imageViewWeakReference;
+        imageViewWeakReference = new WeakReference<>(imageView);
 
         imageLoader.load(imagePath)
-                .apply(RequestOptions.fitCenterTransform())
                 .apply(RequestOptions.centerCropTransform())
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
+                .apply(RequestOptions.errorOf(photoErrorResId))
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -356,6 +361,7 @@ public class MediaView extends ViewGroup implements View.OnClickListener, View.O
 
                     @Override
                     public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        final ImageView imageView = imageViewWeakReference.get();
                         if (imageView != null) {
                             imageView.setBackgroundResource(android.R.color.transparent);
                         }
