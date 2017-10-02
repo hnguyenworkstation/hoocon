@@ -58,9 +58,6 @@
         <meta-data
             android:name="com.facebook.accountkit.ClientToken"
             android:value="@string/facebook_account_kit" />
-        <meta-data
-            android:name="com.hoocons.hooconsandroid.Configurations.GlideConfiguration"
-            android:value="GlideModule"/>
 
         <service android:name=".Tasks.JobServices.FirebaseMessageService">
             <intent-filter>

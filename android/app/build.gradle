@@ -75,6 +75,7 @@ dependencies {
     compile project(':window_image')
     compile project(':twoway_view_core')
     compile project(':twoway_view_layouts')
+    compile project(':stepview')
 
     compile 'com.android.support:cardview-v7:' + versions.supportLib
     compile 'com.android.support:design:' + versions.supportLib

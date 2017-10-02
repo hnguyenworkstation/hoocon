@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/permission_manager/permission_manager.iml" filepath="$PROJECT_DIR$/permission_manager/permission_manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/photopicker/photopicker.iml" filepath="$PROJECT_DIR$/photopicker/photopicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/photoview/photoview.iml" filepath="$PROJECT_DIR$/photoview/photoview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stepview/stepview.iml" filepath="$PROJECT_DIR$/stepview/stepview.iml" />
       <module fileurl="file://$PROJECT_DIR$/text-link-builder/text-link-builder.iml" filepath="$PROJECT_DIR$/text-link-builder/text-link-builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/twoway_view_core/twoway_view_core.iml" filepath="$PROJECT_DIR$/twoway_view_core/twoway_view_core.iml" />
       <module fileurl="file://$PROJECT_DIR$/twoway_view_layouts/twoway_view_layouts.iml" filepath="$PROJECT_DIR$/twoway_view_layouts/twoway_view_layouts.iml" />
