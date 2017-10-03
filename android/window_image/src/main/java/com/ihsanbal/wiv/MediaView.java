@@ -278,11 +278,6 @@ public class MediaView extends ViewGroup implements View.OnClickListener, View.O
 
     void layoutImage(int i, int left, int top, int right, int bottom) {
         final ImageView view = imageViews[i];
-        if (view.getLeft() == left && view.getTop() == top && view.getRight() == right
-                && view.getBottom() == bottom) {
-            return;
-        }
-
         view.layout(left, top, right, bottom);
     }
 
