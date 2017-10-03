@@ -37,12 +37,12 @@
                     app:layout_scrollFlags="scroll|enterAlways"
                     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-                <LinearLayout
+                <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/toolbar">
                     <include layout="@layout/new_event_type_selection_layout"/>
-                </LinearLayout>
+                </ScrollView>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
     </RelativeLayout>

@@ -10,25 +10,27 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_12"
         android:orientation="horizontal"
+        android:background="general_rounded_shape"
         android:id="@+id/type_story">
 
-        <RadioButton
+        <ImageView
+            android:layout_margin="@dimen/margin_12"
             android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/rad_event_type_size"
-            android:id="@+id/type_story_rad"/>
+            android:layout_width="@dimen/event_type_image_size"
+            android:layout_height="@dimen/event_type_image_size"
+            android:id="@+id/type_story_image"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/type_story_rad"
+            android:layout_toEndOf="@+id/type_story_image"
             android:layout_toStartOf="@+id/right"
             android:layout_gravity="center_vertical">
 
             <TextView
-                android:id="@+id/txt_name"
+                android:id="@+id/event_story_name"
                 style="@style/RowItemTitleRecycle"
                 android:maxLines="1"
                 android:ellipsize="end"
@@ -37,24 +39,81 @@
 
             <TextView
                 android:text="hello, my name is Hung"
-                android:id="@+id/txt_content"
+                android:id="@+id/event_story_desc"
                 style="@style/RowItemTitleRecycle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_name"
                 android:layout_marginTop="2dp"
-                android:maxLines="1"
+                android:maxLines="2"
                 android:ellipsize="end"
                 android:textColor="@color/gray_alpha"
                 android:textSize="14sp" />
         </LinearLayout>
 
         <ImageView
+            android:layout_marginStart="@dimen/margin_12"
             android:layout_width="@dimen/common_icon_size"
             android:layout_height="@dimen/common_icon_size"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
             android:id="@+id/right"
-            android:src="@drawable/right"/>
+            android:src="@drawable/ic_right_white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_12"
+        android:layout_marginEnd="@dimen/margin_12"
+        android:layout_marginBottom="@dimen/margin_12"
+        android:orientation="horizontal"
+        android:background="general_rounded_shape"
+        android:id="@+id/type_question">
+
+        <ImageView
+            android:layout_margin="@dimen/margin_12"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/event_type_image_size"
+            android:layout_height="@dimen/event_type_image_size"
+            android:id="@+id/type_question_image"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/type_question_image"
+            android:layout_toStartOf="@+id/right1"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/event_question_name"
+                style="@style/RowItemTitleRecycle"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="Hung Nguyen"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:text="hello, my name is Hung"
+                android:id="@+id/event_question_desc"
+                style="@style/RowItemTitleRecycle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/gray_alpha"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_width="@dimen/common_icon_size"
+            android:layout_height="@dimen/common_icon_size"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/right1"
+            android:src="@drawable/ic_right_white"/>
     </RelativeLayout>
 </LinearLayout>
