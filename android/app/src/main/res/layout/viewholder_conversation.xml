@@ -24,16 +24,6 @@
                 android:layout_width="48dip"
                 android:layout_height="48dip"
                 android:src="@drawable/hoocons_image_logo" />
-
-            <TextView
-                android:id="@+id/unread_msg_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:background="@drawable/badge_background"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:textSize="12sp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -43,26 +33,59 @@
             android:orientation="vertical"
             android:paddingStart="5dip">
 
-            <TextView
-                android:id="@+id/txt_name"
-                style="@style/RowItemTitleRecycle"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:text="Hung Nguyen"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:text="hello, my name is Hung"
-                android:id="@+id/txt_content"
-                style="@style/RowItemTitleRecycle"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_name"
-                android:layout_marginTop="2dp"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:textColor="@color/gray_alpha"
-                android:textSize="14sp" />
+                android:id="@+id/convs_header"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_name"
+                    style="@style/RowItemTitleRecycle"
+                    android:maxLines="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:textSize="16sp"
+                    android:text="Hung Nguyen"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/conversation_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="14:48" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/convs_header"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="hello, my name is Hung"
+                    android:id="@+id/txt_content"
+                    style="@style/RowItemTitleRecycle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="2dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_med_color"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/unread_msg_number"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/unread_text_background"
+                    android:textSize="12sp"/>
+            </LinearLayout>
         </RelativeLayout>
 
         <TextView
@@ -70,7 +93,7 @@
             style="@style/RowItemTitleRecycle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
             android:gravity="top"
             android:singleLine="true"

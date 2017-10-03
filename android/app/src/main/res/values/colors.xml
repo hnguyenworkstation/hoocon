@@ -6,7 +6,7 @@
     <color name="colorBackground">@color/white</color>
 
     <color name="text_dark_color">#5A4B41</color>
-    <color name="text_med_color">#4A3A00</color>
+    <color name="text_med_color">#816e67</color>
     <color name="text_light_color">#ACBDC5</color>
 
     <color name="black_alpha_12">#1F000000</color>
