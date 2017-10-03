@@ -39,6 +39,9 @@ public class NewEventActivity extends BaseActivity {
 
     private NewEventContentFragment newEventContentFragment;
 
+    private String eventTitle;
+    private String eventTextContent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

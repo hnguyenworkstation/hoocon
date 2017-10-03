@@ -124,10 +124,9 @@ dependencies {
     compile 'org.parceler:parceler-api:1.1.9'
 
     testCompile 'junit:junit:4.12'
-    
-    annotationProcessor 'com.github.bumptech.glide:compiler:' + versions.glideSupportLib
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     annotationProcessor 'org.parceler:parceler:1.1.9'
+    annotationProcessor 'com.github.bumptech.glide:compiler:' + versions.glideSupportLib
 }
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.jakewharton.butterknife'

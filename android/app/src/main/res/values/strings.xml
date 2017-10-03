@@ -117,6 +117,11 @@
     <string name="add_a_title">Does it has a title?</string>
     <string name="event_content_desc">What\'s going on with you?</string>
 
+    <string name="images">Images</string>
+    <string name="video_type">Video/Short Clip</string>
+    <string name="location_type">Location/Check in</string>
+    <string name="gif_type">Short Gif</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="quick_comment">Add a comment</string>

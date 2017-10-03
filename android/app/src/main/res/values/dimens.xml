@@ -192,6 +192,7 @@
     <dimen name="ad_title_text">14sp</dimen>
     <dimen name="ad_message_text">12sp</dimen>
     <dimen name="event_type_image_size">48dp</dimen>
+    <dimen name="event_media_picker_size">36dp</dimen>
 
     <dimen name="journal_large_text">24sp</dimen>
     <dimen name="journal_medium_text">18sp</dimen>
