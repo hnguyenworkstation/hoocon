@@ -28,6 +28,7 @@ import android.view.ViewGroup;
 
 import com.hoocons.hooconsandroid.Activities.MainActivity;
 import com.hoocons.hooconsandroid.Activities.NewEventActivity;
+import com.hoocons.hooconsandroid.Activities.NewEventTypeActivity;
 import com.hoocons.hooconsandroid.Adapters.CommonViewPagerAdapter;
 import com.hoocons.hooconsandroid.Adapters.CountryAdapter;
 import com.hoocons.hooconsandroid.Adapters.FeaturedFeedAdapter;
@@ -130,7 +131,7 @@ public class FeaturedFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.new_event_menu:
-                AppUtils.startNewActivity(getContext(), getActivity(), NewEventActivity.class);
+                AppUtils.startNewActivity(getContext(), getActivity(), NewEventTypeActivity.class);
                 break;
         }
 

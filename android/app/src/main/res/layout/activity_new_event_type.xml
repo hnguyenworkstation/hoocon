@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.ppamorim.dragger.DraggerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:drag_view_id="@+id/drag_view"
+    app:shadow_view_id="@+id/shadow_view"
+    app:drag_position="top"
+    tools:context="com.hoocons.hooconsandroid.Activities.NewEventTypeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drag_view"
+        android:background="@color/transparent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="@dimen/activity_card_corner">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"/>
+</com.github.ppamorim.dragger.DraggerView>

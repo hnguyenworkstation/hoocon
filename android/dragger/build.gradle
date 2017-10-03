@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply from: '../dependencies.gradle'
+
+dependencies {
+  compile 'com.android.support:appcompat-v7:'+ versions.supportLib
+  compile 'com.facebook.rebound:rebound:0.3.8'
+}
+
+android {
+  compileSdkVersion versions.compileSdk
+  buildToolsVersion versions.buildTools
+
+  defaultConfig {
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.compileSdk
+    versionCode versions.publishVersionCode
+    versionName versions.publishVersion
+  }
+
+  sourceSets {
+    main {
+      manifest.srcFile 'AndroidManifest.xml'
+      java.srcDirs = ['src/main/java']
+      res.srcDirs = ['res']
+    }
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+}

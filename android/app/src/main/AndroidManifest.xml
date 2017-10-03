@@ -123,15 +123,19 @@
             android:name=".Activities.CollectNewUserInfoActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activities.SearchGeneralActivity"
+        <activity
+            android:name=".Activities.SearchGeneralActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.WebPageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.WebPageActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.NewEventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.NewEventActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity android:name=".Activities.NewEventTypeActivity"></activity>
     </application>
 
 </manifest>
