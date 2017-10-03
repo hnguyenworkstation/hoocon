@@ -31,6 +31,10 @@ public class NewEventActivity extends BaseActivity {
     private Unbinder unbinder;
     private List<StepBean> stepsBeanList;
 
+    public static final String TYPE = "type";
+    public static final String TYPE_QUESTION = "question";
+    public static final String TYPE_STORY = "story";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,13 +78,13 @@ public class NewEventActivity extends BaseActivity {
     }
 
     private void initStepView() {
-        StepBean stepBean0 = new StepBean("接单",0);
+        StepBean stepBean0 = new StepBean(getString(R.string.content),0);
         stepBean0.setState(StepBean.STEP_CURRENT);
 
-        StepBean stepBean1 = new StepBean("打包",-1);
-        StepBean stepBean2 = new StepBean("出发",-1);
-        StepBean stepBean3 = new StepBean("送单",-1);
-        StepBean stepBean4 = new StepBean("完成",-1);
+        StepBean stepBean1 = new StepBean(getString(R.string.media),-1);
+        StepBean stepBean2 = new StepBean(getString(R.string.tag),-1);
+        StepBean stepBean3 = new StepBean(getString(R.string.location),-1);
+        StepBean stepBean4 = new StepBean(getString(R.string.privacy),-1);
 
         stepsBeanList.add(stepBean0);
         stepsBeanList.add(stepBean1);
