@@ -125,4 +125,9 @@
     <string name="default_browser">Default Browser</string>
     <string name="new_event">New Event</string>
     <string name="next_cap">NEXT</string>
+
+    <string name="type_question">Question</string>
+    <string name="type_story">Story</string>
+    <string name="type_story_desc">Create a new story to let someone know what is going on with you…</string>
+    <string name="type_question_desc">Let\'s listen to some ideas and suggestions from people around you by posting a question…</string>
 </resources>

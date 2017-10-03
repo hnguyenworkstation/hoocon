@@ -15,7 +15,6 @@ import javax.annotation.Nullable;
 /**
  * Created by hungnguyen on 9/17/17.
  */
-
 public class AppUtils {
     public static boolean isGooglePlayServicesAvailable(Context context) {
         final GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
@@ -32,7 +31,7 @@ public class AppUtils {
             }
         };
         Handler handler = new Handler();
-        handler.postDelayed(runnable, 1000);
+        handler.postDelayed(runnable, 0);
     }
 
     public static void startNewActivityAndFinish(@NonNull final Context context,
@@ -46,7 +45,7 @@ public class AppUtils {
             }
         };
         Handler handler = new Handler();
-        handler.postDelayed(runnable, 1000);
+        handler.postDelayed(runnable, 0);
     }
 
     public static void loadWebsite(@NonNull final Context context,

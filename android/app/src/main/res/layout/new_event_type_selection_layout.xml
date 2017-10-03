@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_12"
         android:orientation="horizontal"
-        android:background="general_rounded_shape"
         android:id="@+id/type_story">
 
         <ImageView
@@ -34,11 +33,9 @@
                 style="@style/RowItemTitleRecycle"
                 android:maxLines="1"
                 android:ellipsize="end"
-                android:text="Hung Nguyen"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <TextView
-                android:text="hello, my name is Hung"
                 android:id="@+id/event_story_desc"
                 style="@style/RowItemTitleRecycle"
                 android:layout_width="wrap_content"
@@ -46,7 +43,7 @@
                 android:layout_marginTop="2dp"
                 android:maxLines="2"
                 android:ellipsize="end"
-                android:textColor="@color/gray_alpha"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -67,7 +64,6 @@
         android:layout_marginEnd="@dimen/margin_12"
         android:layout_marginBottom="@dimen/margin_12"
         android:orientation="horizontal"
-        android:background="general_rounded_shape"
         android:id="@+id/type_question">
 
         <ImageView
@@ -91,11 +87,9 @@
                 style="@style/RowItemTitleRecycle"
                 android:maxLines="1"
                 android:ellipsize="end"
-                android:text="Hung Nguyen"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <TextView
-                android:text="hello, my name is Hung"
                 android:id="@+id/event_question_desc"
                 style="@style/RowItemTitleRecycle"
                 android:layout_width="wrap_content"
@@ -103,7 +97,7 @@
                 android:layout_marginTop="2dp"
                 android:maxLines="2"
                 android:ellipsize="end"
-                android:textColor="@color/gray_alpha"
+                android:textColor="@color/white"
                 android:textSize="14sp" />
         </LinearLayout>
 
