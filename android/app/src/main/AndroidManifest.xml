@@ -135,7 +135,11 @@
             android:name=".Activities.NewEventActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait" />
-        <activity android:name=".Activities.NewEventTypeActivity"></activity>
+        <activity
+            android:name=".Activities.NewEventTypeActivity"
+            android:theme="@style/Theme.Transparent"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

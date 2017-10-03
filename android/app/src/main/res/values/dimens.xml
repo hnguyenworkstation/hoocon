@@ -105,6 +105,7 @@
     <dimen name="slide_title">26sp</dimen>
     <dimen name="slide_desc">16sp</dimen>
     <dimen name="button_logo_size">32dp</dimen>
+    <dimen name="common_icon_size">24dp</dimen>
     <dimen name="intro_logo_padding">50dp</dimen>
 
     <!-- Notification Fragment Dimen -->
@@ -194,6 +195,8 @@
     <dimen name="journal_large_text">24sp</dimen>
     <dimen name="journal_medium_text">18sp</dimen>
     <dimen name="journal_small_text">16sp</dimen>
+    
+    <dimen name="rad_event_type_size">24dp</dimen>
 
 
 </resources>
