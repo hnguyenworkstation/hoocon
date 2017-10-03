@@ -114,7 +114,8 @@
     <string name="withdraw_friend_request_content">Other user will no longer see your friend request!</string>
     <string name="withdraw">Withdraw</string>
     <string name="request_ready">request ready</string>
-    <string name="add_a_title">Do you need a title?</string>
+    <string name="add_a_title">Does it has a title?</string>
+    <string name="event_content_desc">What\'s going on with you?</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

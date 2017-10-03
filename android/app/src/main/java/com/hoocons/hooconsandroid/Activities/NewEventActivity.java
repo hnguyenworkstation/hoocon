@@ -1,5 +1,6 @@
 package com.hoocons.hooconsandroid.Activities;
 
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.baoyachi.stepview.HorizontalStepView;
 import com.baoyachi.stepview.bean.StepBean;
 import com.hoocons.hooconsandroid.AppController.BaseActivity;
 import com.hoocons.hooconsandroid.R;
+import com.hoocons.hooconsandroid.ViewFragments.NewEventContentFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,8 @@ public class NewEventActivity extends BaseActivity {
     public static final String TYPE_QUESTION = "question";
     public static final String TYPE_STORY = "story";
 
+    private NewEventContentFragment newEventContentFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,18 @@ public class NewEventActivity extends BaseActivity {
 
         initActionBar();
         initStepView();
+        initFragments();
+        showFirstView();
+    }
+
+    private void initFragments() {
+        newEventContentFragment = NewEventContentFragment.newInstance();
+    }
+
+    private void showFirstView() {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_frame, newEventContentFragment, "content");
+        fragmentTransaction.commit();
     }
 
     private void initActionBar() {
