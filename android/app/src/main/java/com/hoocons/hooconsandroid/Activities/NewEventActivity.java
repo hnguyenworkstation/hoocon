@@ -50,14 +50,14 @@ public class NewEventActivity extends BaseActivity {
         initActionBar();
         initStepView();
         initFragments();
-        showFirstView();
+        showGetContentView();
     }
 
     private void initFragments() {
         newEventContentFragment = NewEventContentFragment.newInstance();
     }
 
-    private void showFirstView() {
+    private void showGetContentView() {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_frame, newEventContentFragment, "content");
         fragmentTransaction.commit();
