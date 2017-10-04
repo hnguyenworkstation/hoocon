@@ -8,6 +8,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +24,10 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
+import com.hoocons.hooconsandroid.Adapters.RemovableImageAdapter;
 import com.hoocons.hooconsandroid.AppController.BaseApplication;
 import com.hoocons.hooconsandroid.Helpers.AppUtils;
+import com.hoocons.hooconsandroid.Interfaces.OnRemovableImageClickListener;
 import com.hoocons.hooconsandroid.R;
 import com.vstechlab.easyfonts.EasyFonts;
 
@@ -33,7 +39,7 @@ import butterknife.Unbinder;
 import me.iwf.photopicker.PhotoPicker;
 
 
-public class NewEventMediaFragment extends Fragment implements View.OnClickListener{
+public class NewEventMediaFragment extends Fragment implements View.OnClickListener, OnRemovableImageClickListener{
     @BindView(R.id.initial_layout)
     RelativeLayout mInitialLayout;
     @BindView(R.id.content_layout)
@@ -69,6 +75,13 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
     @BindView(R.id.event_gif_name)
     TextView mGifName;
 
+    @BindView(R.id.posting_content)
+    TextView mEventCheckinStatus;
+    @BindView(R.id.media_recycler)
+    RecyclerView mMediaRecycler;
+    @BindView(R.id.single_media)
+    RelativeLayout mSingleMedia;
+
 
     private Unbinder unbinder;
 
@@ -79,6 +92,7 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
     private final int VIDEO_LIBRARY_REQUEST = 5;
 
     private ArrayList<String> pickedImages;
+    private RemovableImageAdapter removableImageAdapter;
 
 
     public NewEventMediaFragment() {
@@ -192,7 +206,27 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
     }
 
     private void loadPickedImages(ArrayList<String> images) {
-        pickedImages = images;
+        pickedImages.clear();
+        pickedImages.addAll(images);
+        removableImageAdapter = new RemovableImageAdapter(getContext(), pickedImages, this);
+
+        mMediaRecycler.setLayoutManager(new GridLayoutManager(getContext(), 3, LinearLayoutManager.VERTICAL, false));
+        mMediaRecycler.setAdapter(removableImageAdapter);
+        mMediaRecycler.setItemAnimator(new DefaultItemAnimator());
+        mMediaRecycler.setNestedScrollingEnabled(false);
+        mMediaRecycler.setVisibility(View.VISIBLE);
+
+        showContentLayout();
+    }
+
+    private void showContentLayout() {
+        mContentLayout.setVisibility(View.VISIBLE);
+        mInitialLayout.setVisibility(View.GONE);
+    }
+
+    private void showInitialLayout() {
+        mContentLayout.setVisibility(View.GONE);
+        mInitialLayout.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -222,7 +256,7 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.event_image_picker:
-                AppUtils.startImagePicker(getActivity(), 10, PHOTO_PICKER);
+                AppUtils.startImagePickerFromFragment(getContext(), NewEventMediaFragment.this, 10, PHOTO_PICKER);
                 break;
             case R.id.event_location_picker:
                 break;
@@ -233,5 +267,10 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onRemovableImageClicked(int position) {
+
     }
 }

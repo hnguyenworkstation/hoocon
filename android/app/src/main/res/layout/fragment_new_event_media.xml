@@ -1,30 +1,44 @@
-<android.support.v4.widget.NestedScrollView
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.hoocons.hooconsandroid.ViewFragments.NewEventMediaFragment">
 
-    <RelativeLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/new_event_footer">
 
         <RelativeLayout
-            android:layout_marginTop="@dimen/margin_48"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/initial_layout">
-            <include layout="@layout/new_event_media_selector"/>
-        </RelativeLayout>
+            android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_marginTop="@dimen/margin_48"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            android:id="@+id/content_layout">
-            <include layout="@layout/new_event_media_layout"/>
+            <RelativeLayout
+                android:layout_marginTop="@dimen/margin_48"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/initial_layout">
+                <include layout="@layout/new_event_media_selector"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/content_layout">
+                <include layout="@layout/new_event_media_layout"/>
+            </RelativeLayout>
+
         </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/new_event_footer"
+        android:layout_alignParentBottom="true">
+        <include layout="@layout/new_event_footer"/>
     </RelativeLayout>
-</android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

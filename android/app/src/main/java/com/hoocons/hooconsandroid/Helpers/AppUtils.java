@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -36,6 +37,22 @@ public class AppUtils {
                         .setShowCamera(true)
                         .setShowGif(true)
                         .start(activity, code);
+            }
+        }, 0);
+    }
+
+    public static void startImagePickerFromFragment(final Context context, final Fragment fragment, final int maxNum, final int code) {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                PhotoPicker.builder()
+                        .setPhotoCount(maxNum)
+                        .setGridColumnCount(3)
+                        .setPreviewEnabled(false)
+                        .setShowCamera(true)
+                        .setShowGif(true)
+                        .start(context, fragment, code);
             }
         }, 0);
     }

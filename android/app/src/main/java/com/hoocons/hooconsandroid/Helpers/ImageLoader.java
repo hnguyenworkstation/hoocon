@@ -1,6 +1,7 @@
 package com.hoocons.hooconsandroid.Helpers;
 
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -26,6 +27,32 @@ public class ImageLoader {
 
         BaseApplication.getInstance().getGlide()
                 .load(url)
+                .apply(RequestOptions.centerCropTransform())
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        if (progressBar != null) {
+                            progressBar.setVisibility(View.GONE);
+                        }
+                        return false;
+                    }
+                })
+                .into(view);
+    }
+
+    public static void loadAdjustImage(AdjustableImageView view, Uri uri, final ProgressBar progressBar) {
+        if (view == null) {
+            return;
+        }
+
+        BaseApplication.getInstance().getGlide()
+                .load(uri)
                 .apply(RequestOptions.centerCropTransform())
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
                 .listener(new RequestListener<Drawable>() {
