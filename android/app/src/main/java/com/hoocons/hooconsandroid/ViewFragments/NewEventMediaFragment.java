@@ -12,10 +12,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,11 +29,14 @@ import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.hoocons.hooconsandroid.Adapters.RemovableImageAdapter;
 import com.hoocons.hooconsandroid.AppController.BaseApplication;
+import com.hoocons.hooconsandroid.CustomUI.AdjustableImageView;
 import com.hoocons.hooconsandroid.Helpers.AppUtils;
+import com.hoocons.hooconsandroid.Helpers.ImageLoader;
 import com.hoocons.hooconsandroid.Interfaces.OnRemovableImageClickListener;
 import com.hoocons.hooconsandroid.R;
 import com.vstechlab.easyfonts.EasyFonts;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -80,7 +86,23 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
     @BindView(R.id.media_recycler)
     RecyclerView mMediaRecycler;
     @BindView(R.id.single_media)
-    RelativeLayout mSingleMedia;
+    RelativeLayout mSingleMediaLayout;
+
+    @BindView(R.id.event_single_content)
+    AdjustableImageView mSingleMediaContent;
+    @BindView(R.id.loading_progress)
+    ProgressBar mSingleMediaProgress;
+    @BindView(R.id.delete_single_content)
+    ImageButton mDeleteSingleMedia;
+
+    @BindView(R.id.event_add_photo)
+    ImageView mAddPhotoBtn;
+    @BindView(R.id.event_add_video)
+    ImageView mAddVideoBtn;
+    @BindView(R.id.event_add_location)
+    ImageView mAddLocationBtn;
+    @BindView(R.id.event_add_gif)
+    ImageView mAddGifBtn;
 
 
     private Unbinder unbinder;
@@ -143,6 +165,13 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
         mEventLocationPicker.setOnClickListener(this);
         mEventVideoPicker.setOnClickListener(this);
         mEventGifPicker.setOnClickListener(this);
+
+        mAddGifBtn.setOnClickListener(this);
+        mAddPhotoBtn.setOnClickListener(this);
+        mAddVideoBtn.setOnClickListener(this);
+        mAddLocationBtn.setOnClickListener(this);
+
+        mDeleteSingleMedia.setOnClickListener(this);
     }
 
     private void initImagePickerLayout() {
@@ -219,15 +248,42 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
         showContentLayout();
     }
 
+    private void loadSingleContent(ArrayList<String> images) {
+        pickedImages.clear();
+        pickedImages.addAll(images);
+
+        File file = new File(images.get(0));
+        Uri imageUri = Uri.fromFile(file);
+        Log.e("Test", imageUri.toString());
+
+        ImageLoader.loadAdjustImage(mSingleMediaContent, imageUri, mSingleMediaProgress);
+        showSingleContentLayout();
+    }
+
+    private void removeSingleContent() {
+        pickedImages.clear();
+        BaseApplication.getInstance().getGlide().clear(mSingleMediaContent);
+        mSingleMediaLayout.setVisibility(View.GONE);
+    }
+
+    private void showSingleContentLayout() {
+        mSingleMediaLayout.setVisibility(View.VISIBLE);
+        mContentLayout.setVisibility(View.VISIBLE);
+        mInitialLayout.setVisibility(View.GONE);
+    }
+
     private void showContentLayout() {
+        mSingleMediaLayout.setVisibility(View.GONE);
         mContentLayout.setVisibility(View.VISIBLE);
         mInitialLayout.setVisibility(View.GONE);
     }
 
     private void showInitialLayout() {
         mContentLayout.setVisibility(View.GONE);
+        mSingleMediaLayout.setVisibility(View.GONE);
         mInitialLayout.setVisibility(View.VISIBLE);
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -235,7 +291,11 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
             if (requestCode == PHOTO_PICKER) {
                 if (data != null){
                     final ArrayList<String> images = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
-                    loadPickedImages(images);
+                    if (images.size() > 1) {
+                        loadPickedImages(images);
+                    } else if (images.size() == 1) {
+                        loadSingleContent(images);
+                    }
                 }
             } else if (requestCode == CHECKIN_PLACE_PICKER_REQUEST) {
                 Place place = PlacePicker.getPlace(data, getContext());
@@ -255,14 +315,21 @@ public class NewEventMediaFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.event_add_photo:
             case R.id.event_image_picker:
                 AppUtils.startImagePickerFromFragment(getContext(), NewEventMediaFragment.this, 10, PHOTO_PICKER);
                 break;
+            case R.id.event_add_location:
             case R.id.event_location_picker:
                 break;
+            case R.id.event_add_video:
             case R.id.event_video_picker:
                 break;
+            case R.id.event_add_gif:
             case R.id.event_gif_picker:
+                break;
+            case R.id.delete_single_content:
+                removeSingleContent();
                 break;
             default:
                 break;

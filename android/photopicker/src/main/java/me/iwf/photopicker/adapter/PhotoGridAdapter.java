@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -18,6 +19,11 @@ import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
+import com.facebook.rebound.BaseSpringSystem;
+import com.facebook.rebound.SimpleSpringListener;
+import com.facebook.rebound.Spring;
+import com.facebook.rebound.SpringSystem;
+import com.facebook.rebound.SpringUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -29,6 +35,7 @@ import me.iwf.photopicker.event.OnItemCheckListener;
 import me.iwf.photopicker.event.OnPhotoClickListener;
 import me.iwf.photopicker.utils.AndroidLifecycleUtils;
 import me.iwf.photopicker.utils.MediaStoreHelper;
+import me.iwf.photopicker.widget.SquareItemLayout;
 
 /**
  * Created by donglua on 15/5/31.
@@ -98,7 +105,8 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
   }
 
 
-  @Override public void onBindViewHolder(final PhotoViewHolder holder, int position) {
+  @Override
+  public void onBindViewHolder(final PhotoViewHolder holder, int position) {
     if (getItemViewType(position) == ITEM_TYPE_PHOTO) {
 
       List<Photo> photos = getCurrentPhotos();
@@ -144,6 +152,22 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
       holder.vSelected.setSelected(isChecked);
       holder.ivPhoto.setSelected(isChecked);
 
+        holder.mPhotoRoot.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        holder.mScaleOutSpring.setEndValue(0.3);
+                        break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        holder.mScaleOutSpring.setEndValue(0);
+                        break;
+                }
+                return true;
+            }
+        });
+
       holder.ivPhoto.setOnClickListener(new View.OnClickListener() {
         @Override public void onClick(View view) {
           if (onPhotoClickListener != null) {
@@ -158,6 +182,7 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
           }
         }
       });
+
       holder.vSelected.setOnClickListener(new View.OnClickListener() {
         @Override public void onClick(View view) {
           int pos = holder.getAdapterPosition();
@@ -167,6 +192,7 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
             isEnable = onItemCheckListener.onItemCheck(pos, photo,
                     getSelectedPhotos().size() + (isSelected(photo) ? -1: 1));
           }
+
           if (isEnable) {
             toggleSelection(photo);
             notifyItemChanged(pos);
@@ -194,11 +220,29 @@ public class PhotoGridAdapter extends SelectableAdapter<PhotoGridAdapter.PhotoVi
     private ImageView ivPhoto;
     private View vSelected;
     private GifDrawable gifDrawable;
+    private SquareItemLayout mPhotoRoot;
+    private final BaseSpringSystem mSpringSystem = SpringSystem.create();
+
+    private final ImageOutSpringListener springOutListener = new ImageOutSpringListener();
+    private Spring mScaleOutSpring;
 
     public PhotoViewHolder(View itemView) {
       super(itemView);
       ivPhoto   = (ImageView) itemView.findViewById(R.id.iv_photo);
       vSelected = itemView.findViewById(R.id.v_selected);
+      mPhotoRoot = (SquareItemLayout) itemView.findViewById(R.id.photo_root);
+
+        mScaleOutSpring = mSpringSystem.createSpring();
+        mScaleOutSpring.addListener(springOutListener);
+    }
+
+    private class ImageOutSpringListener extends SimpleSpringListener {
+      @Override
+      public void onSpringUpdate(Spring spring) {
+          float mappedValue = (float) SpringUtil.mapValueFromRangeToRange(spring.getCurrentValue(), 0, 1, 1, 0.5);
+          mPhotoRoot.setScaleX(mappedValue);
+          mPhotoRoot.setScaleY(mappedValue);
+      }
     }
   }
 

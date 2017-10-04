@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<me.iwf.photopicker.widget.SquareItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<me.iwf.photopicker.widget.SquareItemLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/photo_root"
     >
   <ImageView
       android:padding="1dip"
