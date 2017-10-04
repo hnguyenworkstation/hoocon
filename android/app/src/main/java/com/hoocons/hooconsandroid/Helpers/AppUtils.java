@@ -12,6 +12,8 @@ import com.hoocons.hooconsandroid.Activities.WebPageActivity;
 
 import javax.annotation.Nullable;
 
+import me.iwf.photopicker.PhotoPicker;
+
 /**
  * Created by hungnguyen on 9/17/17.
  */
@@ -20,6 +22,22 @@ public class AppUtils {
         final GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
         int googlePlayServicesAvailable = apiAvailability.isGooglePlayServicesAvailable(context);
         return googlePlayServicesAvailable == ConnectionResult.SUCCESS;
+    }
+
+    public static void startImagePicker(final Activity activity, final int maxNum, final int code) {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                PhotoPicker.builder()
+                        .setPhotoCount(maxNum)
+                        .setGridColumnCount(3)
+                        .setPreviewEnabled(false)
+                        .setShowCamera(true)
+                        .setShowGif(true)
+                        .start(activity, code);
+            }
+        }, 0);
     }
 
     public static void startNewActivity(@NonNull final Context context, @Nullable final Activity fromActivity,

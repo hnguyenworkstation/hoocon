@@ -26,6 +26,5 @@
             android:id="@+id/content_layout">
             <include layout="@layout/new_event_media_layout"/>
         </RelativeLayout>
-
     </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>

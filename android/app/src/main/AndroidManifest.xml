@@ -82,6 +82,15 @@
             </intent-filter>
         </service>
 
+        <!-- ACTIVITIES FOR PHOTO PICKER -->
+        <activity
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name="me.iwf.photopicker.PhotoPagerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- ACTIVITIES FOR FACEBOOK LOGGER-->
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
@@ -102,6 +111,8 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
+        <!-- ACTIVITIES FOR HOOCONS APP-->
         <activity
             android:name=".Activities.SplashActivity"
             android:screenOrientation="portrait">

@@ -1,6 +1,8 @@
 package com.hoocons.hooconsandroid.ViewFragments;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,19 +14,26 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.hoocons.hooconsandroid.AppController.BaseApplication;
+import com.hoocons.hooconsandroid.Helpers.AppUtils;
 import com.hoocons.hooconsandroid.R;
 import com.vstechlab.easyfonts.EasyFonts;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import me.iwf.photopicker.PhotoPicker;
 
 
-public class NewEventMediaFragment extends Fragment {
+public class NewEventMediaFragment extends Fragment implements View.OnClickListener{
     @BindView(R.id.initial_layout)
     RelativeLayout mInitialLayout;
     @BindView(R.id.content_layout)
@@ -63,6 +72,14 @@ public class NewEventMediaFragment extends Fragment {
 
     private Unbinder unbinder;
 
+    private final int PHOTO_PICKER = 1;
+    private final int CHECKIN_PLACE_PICKER_REQUEST = 2;
+    private final int TAGGED_PLACE_PICKER_REQUEST = 4;
+    private final int REQUEST_LOCATION_PERMISSION = 3;
+    private final int VIDEO_LIBRARY_REQUEST = 5;
+
+    private ArrayList<String> pickedImages;
+
 
     public NewEventMediaFragment() {
 
@@ -80,6 +97,8 @@ public class NewEventMediaFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
         }
+
+        pickedImages = new ArrayList<>();
     }
 
     @Override
@@ -94,10 +113,22 @@ public class NewEventMediaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         unbinder = ButterKnife.bind(this, view);
 
+        initLayout();
+        initOnClickListener();
+    }
+
+    private void initLayout() {
         initImagePickerLayout();
         initVideoPickerLayout();
         initLocationPickerLayout();
         initGifPickerLayout();
+    }
+
+    private void initOnClickListener() {
+        mEventImagePicker.setOnClickListener(this);
+        mEventLocationPicker.setOnClickListener(this);
+        mEventVideoPicker.setOnClickListener(this);
+        mEventGifPicker.setOnClickListener(this);
     }
 
     private void initImagePickerLayout() {
@@ -158,5 +189,49 @@ public class NewEventMediaFragment extends Fragment {
         mEventGifPicker.setBackgroundResource(R.drawable.general_rounded_shape);
         GradientDrawable drawable = (GradientDrawable) mEventGifPicker.getBackground();
         drawable.setColor(getResources().getColor(R.color.event_gif_picker));
+    }
+
+    private void loadPickedImages(ArrayList<String> images) {
+        pickedImages = images;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == PHOTO_PICKER) {
+                if (data != null){
+                    final ArrayList<String> images = data.getStringArrayListExtra(PhotoPicker.KEY_SELECTED_PHOTOS);
+                    loadPickedImages(images);
+                }
+            } else if (requestCode == CHECKIN_PLACE_PICKER_REQUEST) {
+                Place place = PlacePicker.getPlace(data, getContext());
+                String toastMsg = String.format("Place: %s", place.getName());
+                Toast.makeText(getContext(), toastMsg, Toast.LENGTH_LONG).show();
+
+            } else if (requestCode == TAGGED_PLACE_PICKER_REQUEST) {
+                Place place = PlacePicker.getPlace(data, getContext());
+                String toastMsg = String.format("Place: %s", place.getName());
+                Toast.makeText(getContext(), toastMsg, Toast.LENGTH_LONG).show();
+            } else {
+                super.onActivityResult(requestCode, resultCode, data);
+            }
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.event_image_picker:
+                AppUtils.startImagePicker(getActivity(), 10, PHOTO_PICKER);
+                break;
+            case R.id.event_location_picker:
+                break;
+            case R.id.event_video_picker:
+                break;
+            case R.id.event_gif_picker:
+                break;
+            default:
+                break;
+        }
     }
 }
