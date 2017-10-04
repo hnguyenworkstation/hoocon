@@ -25,6 +25,11 @@ import butterknife.Unbinder;
 
 
 public class NewEventMediaFragment extends Fragment {
+    @BindView(R.id.initial_layout)
+    RelativeLayout mInitialLayout;
+    @BindView(R.id.content_layout)
+    RelativeLayout mContentLayout;
+
     @BindView(R.id.event_image_picker)
     RelativeLayout mEventImagePicker;
     @BindView(R.id.event_image_icon)
@@ -100,14 +105,14 @@ public class NewEventMediaFragment extends Fragment {
         mImageName.setTypeface(EasyFonts.robotoRegular(getContext()));
 
         BaseApplication.getInstance().getGlide()
-                .load(R.drawable.image_hot_air_balloon)
+                .load(R.drawable.ic_image_circle)
                 .apply(RequestOptions.fitCenterTransform())
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
                 .into(mImageIcon);
 
         mEventImagePicker.setBackgroundResource(R.drawable.general_rounded_shape);
         GradientDrawable drawable = (GradientDrawable) mEventImagePicker.getBackground();
-        drawable.setColor(getResources().getColor(R.color.type_event_story));
+        drawable.setColor(getResources().getColor(R.color.event_image_picker));
     }
 
     private void initVideoPickerLayout() {
@@ -115,14 +120,14 @@ public class NewEventMediaFragment extends Fragment {
         mVideoName.setTypeface(EasyFonts.robotoRegular(getContext()));
 
         BaseApplication.getInstance().getGlide()
-                .load(R.drawable.image_hot_air_balloon)
+                .load(R.drawable.ic_video_circle)
                 .apply(RequestOptions.fitCenterTransform())
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
                 .into(mVideoIcon);
 
         mEventVideoPicker.setBackgroundResource(R.drawable.general_rounded_shape);
         GradientDrawable drawable = (GradientDrawable) mEventVideoPicker.getBackground();
-        drawable.setColor(getResources().getColor(R.color.type_event_story));
+        drawable.setColor(getResources().getColor(R.color.event_video_picker));
     }
 
     private void initLocationPickerLayout() {
@@ -130,14 +135,14 @@ public class NewEventMediaFragment extends Fragment {
         mLocationName.setTypeface(EasyFonts.robotoRegular(getContext()));
 
         BaseApplication.getInstance().getGlide()
-                .load(R.drawable.image_hot_air_balloon)
+                .load(R.drawable.ic_location_circle)
                 .apply(RequestOptions.fitCenterTransform())
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
                 .into(mLocationIcon);
 
         mEventLocationPicker.setBackgroundResource(R.drawable.general_rounded_shape);
         GradientDrawable drawable = (GradientDrawable) mEventLocationPicker.getBackground();
-        drawable.setColor(getResources().getColor(R.color.type_event_story));
+        drawable.setColor(getResources().getColor(R.color.event_location_picker));
     }
 
     private void initGifPickerLayout() {
@@ -145,13 +150,13 @@ public class NewEventMediaFragment extends Fragment {
         mGifName.setTypeface(EasyFonts.robotoRegular(getContext()));
 
         BaseApplication.getInstance().getGlide()
-                .load(R.drawable.image_hot_air_balloon)
+                .load(R.drawable.ic_gif_circle)
                 .apply(RequestOptions.fitCenterTransform())
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
                 .into(mGifIcon);
 
         mEventGifPicker.setBackgroundResource(R.drawable.general_rounded_shape);
         GradientDrawable drawable = (GradientDrawable) mEventGifPicker.getBackground();
-        drawable.setColor(getResources().getColor(R.color.type_event_story));
+        drawable.setColor(getResources().getColor(R.color.event_gif_picker));
     }
 }

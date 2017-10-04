@@ -16,6 +16,7 @@ import com.baoyachi.stepview.bean.StepBean;
 import com.hoocons.hooconsandroid.AppController.BaseActivity;
 import com.hoocons.hooconsandroid.R;
 import com.hoocons.hooconsandroid.ViewFragments.NewEventContentFragment;
+import com.hoocons.hooconsandroid.ViewFragments.NewEventMediaFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class NewEventActivity extends BaseActivity {
     public static final String TYPE_STORY = "story";
 
     private NewEventContentFragment newEventContentFragment;
+    private NewEventMediaFragment newEventMediaFragment;
 
     private String eventTitle;
     private String eventTextContent;
@@ -58,11 +60,18 @@ public class NewEventActivity extends BaseActivity {
 
     private void initFragments() {
         newEventContentFragment = NewEventContentFragment.newInstance();
+        newEventMediaFragment = NewEventMediaFragment.newInstance();
     }
 
     private void showGetContentView() {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_frame, newEventContentFragment, "content");
+        fragmentTransaction.commit();
+    }
+
+    private void showGetMediaView() {
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_frame, newEventMediaFragment, "media");
         fragmentTransaction.commit();
     }
 
@@ -79,21 +88,40 @@ public class NewEventActivity extends BaseActivity {
         actionBar.setTitle(getString(R.string.new_event));
     }
 
+    private void commitNextScreen() {
+        if (getSupportFragmentManager().findFragmentByTag("content") != null) {
+            showGetMediaView();
+            stepsBeanList.get(0).setState(1);
+            stepsBeanList.get(1).setState(0);
+        }
+
+        redrawStepView();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.new_event_menu, menu);
+
         return true;
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         MenuItem item = menu.findItem(R.id.next);
-
-        // disable item
-        item.setEnabled(false);
-
         return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.next:
+                commitNextScreen();
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void initStepView() {
@@ -111,6 +139,10 @@ public class NewEventActivity extends BaseActivity {
         stepsBeanList.add(stepBean3);
         stepsBeanList.add(stepBean4);
 
+        redrawStepView();
+    }
+
+    private void redrawStepView() {
         mStepView
                 .setStepViewTexts(stepsBeanList)
                 .setTextSize(12)//set textSize

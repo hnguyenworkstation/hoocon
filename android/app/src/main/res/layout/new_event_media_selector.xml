@@ -13,7 +13,7 @@
         android:id="@+id/event_image_picker">
 
         <ImageView
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/margin_4"
             android:layout_centerVertical="true"
             android:layout_width="@dimen/event_media_picker_size"
             android:layout_height="@dimen/event_media_picker_size"
@@ -56,7 +56,7 @@
         android:id="@+id/event_video_picker">
 
         <ImageView
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/margin_4"
             android:layout_centerVertical="true"
             android:layout_width="@dimen/event_media_picker_size"
             android:layout_height="@dimen/event_media_picker_size"
@@ -99,7 +99,7 @@
         android:id="@+id/event_location_picker">
 
         <ImageView
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/margin_4"
             android:layout_centerVertical="true"
             android:layout_width="@dimen/event_media_picker_size"
             android:layout_height="@dimen/event_media_picker_size"
@@ -142,7 +142,7 @@
         android:id="@+id/event_gif_picker">
 
         <ImageView
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/margin_4"
             android:layout_centerVertical="true"
             android:layout_width="@dimen/event_media_picker_size"
             android:layout_height="@dimen/event_media_picker_size"

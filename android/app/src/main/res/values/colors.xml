@@ -62,6 +62,11 @@
     <color name="type_event_question">#E78775</color>
     <color name="type_event_story">#41C5D3</color>
 
+    <color name="event_gif_picker">#F2BBBB</color>
+    <color name="event_location_picker">#85C8DD</color>
+    <color name="event_image_picker">#C3BEF0</color>
+    <color name="event_video_picker">#D8CBBB</color>
+
     <array name="array_dot_active">
         <item>@color/dot_light_screen1</item>
         <item>@color/dot_light_screen2</item>

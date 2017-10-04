@@ -13,8 +13,18 @@
         <RelativeLayout
             android:layout_marginTop="@dimen/margin_48"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:id="@+id/initial_layout">
             <include layout="@layout/new_event_media_selector"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/margin_48"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/content_layout">
+            <include layout="@layout/new_event_media_layout"/>
         </RelativeLayout>
 
     </RelativeLayout>
